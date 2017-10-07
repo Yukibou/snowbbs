@@ -14,6 +14,33 @@ ja:
       user: ユーザー
     attributes:
       observation:
+        user: 投稿者 Observer *
+        observation_at:	日付 Date *
+        created_at: 投稿時刻 Time *
+        range: エリア Range *
+        mountain: 山岳 Mountain *
+        location: 場所 Location *
+        elevation: 標高 Elevation
+        elevation_low: 標高低 Elevation
+        elevation_low_comments: 標高コメント Elevation
+        elevation_high: 標高高 Elevation
+        elevation_high_comments: 標高コメント Elevation
+        temperature: 気温 Temp.
+        sky: 天気 Sky
+        sky_comments: 天気コメントComments
+        wind: 風 Wind
+        wind_speed:	風速 Speed
+        wind_direction: 風向 Direction
+        wind_comments: 風コメント Comments
+        降水: Precipitation
+        precipitation_type: 種類 Type
+        precipitation_rate: 強度 Rate
+        precipitation_comments: 降水コメント Comments
+        avalanches: 雪崩などの観察 Avalanches
+        avalanche_occurred: 雪崩発生有無
+        snowpack: 積雪構造 Snowpack
+        spin_url: SPIN有無
+        comments: コメント Comments
       user:
         email: メールアドレス
         name: 氏名
@@ -23,6 +50,15 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+  enumerize:
+    observation:
+      sky:
+        clr: 'CLR 雲量0'
+        few: 'FEW 雲量1-3'
+        sct: 'SCT 雲量4-5'
+        bkn: 'BKN 雲量6-9'
+        ovc: 'OVC 雲量10'
+        x: 'X 不明'
   date:
     abbr_day_names:
     - 日
@@ -220,12 +256,3 @@ ja:
       short: "%y/%m/%d %H:%M"
     pm: 午後
 
-  enumerize:
-    observation:
-      sky:
-        clr: 'CLR 雲量0'
-        few: 'FEW 雲量1-3'
-        sct: 'SCT 雲量4-5'
-        bkn: 'BKN 雲量6-9'
-        ovc: 'OVC 雲量10'
-        x: 'X 不明'
