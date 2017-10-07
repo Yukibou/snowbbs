@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171004003727) do
+ActiveRecord::Schema.define(version: 20171007022736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "observations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "observation_at"
+    t.string   "range"
+    t.string   "mountain"
+    t.string   "location"
+    t.string   "elevation"
+    t.integer  "elevation_low"
+    t.string   "elevation_low_comments"
+    t.integer  "elevation_high"
+    t.string   "elevation_high_comments"
+    t.integer  "temperature"
+    t.string   "sky"
+    t.string   "sky_comments"
+    t.string   "wind_speed"
+    t.string   "wind_direction"
+    t.string   "wind_comments"
+    t.string   "precipitation_type"
+    t.string   "precipitation_rate"
+    t.string   "precipitation_comments"
+    t.string   "avalanches"
+    t.boolean  "avalanche_occurred",      default: false
+    t.string   "snowpack"
+    t.string   "spin_url"
+    t.string   "comments"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.index ["user_id"], name: "index_observations_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
