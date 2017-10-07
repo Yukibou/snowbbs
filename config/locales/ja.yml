@@ -53,12 +53,35 @@ ja:
   enumerize:
     observation:
       sky:
-        clr: 'CLR 雲量0'
-        few: 'FEW 雲量1-3'
-        sct: 'SCT 雲量4-5'
-        bkn: 'BKN 雲量6-9'
-        ovc: 'OVC 雲量10'
-        x: 'X 不明'
+        clr: CLR 雲量0
+        few: FEW 雲量1-3
+        sct: SCT 雲量4-5
+        bkn: BKN 雲量6-9
+        ovc: OVC 雲量10
+        x: X 不明
+      wind_speed:
+        c: C 0m/s
+        l: L 1-7m/s
+        m: M 8-11m/s
+        s: S 12-17m/s
+        x: X >17m/s
+      wind_direction:
+        n: N
+        ne: NE
+        e: E
+        se: SE
+        s: S
+        sw: SW
+        w: W
+        nw: NW
+      precipitation_type:
+        nil: Nil なし
+        r: R 雨
+        s: S 雪
+        rs: RS みぞれ
+        g: G あられ
+        zr: ZR 凍雨
+
   date:
     abbr_day_names:
     - 日
