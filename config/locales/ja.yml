@@ -17,7 +17,7 @@ ja:
         user: 投稿者 Observer *
         observation_at:	日付 Date *
         created_at: 投稿時刻 Time *
-        range: エリア Range *
+        area: エリア Range *
         mountain: 山岳 Mountain *
         location: 場所 Location *
         elevation: 標高 Elevation
