@@ -38,6 +38,7 @@ group :development do
   gem 'hub', :require=>nil
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'erb2haml'
 end
 
 group :development, :test do
