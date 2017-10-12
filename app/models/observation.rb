@@ -2,6 +2,9 @@ class Observation < ApplicationRecord
   extend Enumerize
   belongs_to :user
   belongs_to :area
+  has_many :evaluations, dependent: :delete_all, inverse_of: :observation
+  accepts_nested_attributes_for :evaluations
+
   validates :user, :observation_at, :area, :mountain, :location, presence: true
   validates :elevation_low, :elevation_high, :temperature, numericality: true
 

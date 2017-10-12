@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007055658) do
+ActiveRecord::Schema.define(version: 20171011044801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,27 @@ ActiveRecord::Schema.define(version: 20171007055658) do
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "evaluations", force: :cascade do |t|
+    t.integer  "observation_id"
+    t.integer  "priority",       default: 1
+    t.string   "problem"
+    t.boolean  "has_observe",    default: false
+    t.string   "weak_layer"
+    t.string   "potential_size"
+    t.string   "triggering"
+    t.string   "sensitivity"
+    t.string   "spatial"
+    t.string   "terrain"
+    t.string   "memo"
+    t.string   "zone"
+    t.string   "danger_rating"
+    t.string   "comments"
+    t.string   "confidence"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["observation_id"], name: "index_evaluations_on_observation_id", using: :btree
   end
 
   create_table "observations", force: :cascade do |t|

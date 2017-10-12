@@ -25,5 +25,23 @@
     = f.input :spin_url
     = f.input :comments
 
+  %hr
+  .form-inputs
+    = f.simple_fields_for :evaluations do |ef|
+      = ef.input :priority
+      = ef.input :problem
+      = ef.input :has_observe, wrapper: :horizontal_radio_and_checkboxes
+      = ef.input :weak_layer
+      = ef.input :potential_size
+      = ef.input :triggering
+      = ef.input :sensitivity
+      = ef.input :spatial
+      = ef.input :terrain
+      = ef.input :memo
+      = ef.input :zone
+      = ef.input :danger_rating
+      = ef.input :comments
+      = ef.input :confidence
+
   .form-actions
     = f.button :submit, class: 'btn btn-primary'
