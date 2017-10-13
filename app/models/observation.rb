@@ -6,7 +6,7 @@ class Observation < ApplicationRecord
   accepts_nested_attributes_for :evaluations
 
   validates :user, :observation_at, :area, :mountain, :location, presence: true
-  validates :elevation_low, :elevation_high, :temperature, numericality: true
+  validates :elevation_low, :elevation_high, :temperature, numericality: true, allow_blank: true
 
   enumerize :sky, in: [:clr, :few, :sct, :bkn, :ovc, :x]
   enumerize :wind_speed, in: [:c, :l, :m, :s, :x]
