@@ -98,6 +98,41 @@ ja:
         rs: RS みぞれ
         g: G あられ
         zr: ZR 凍雨
+    evaluation:
+      problem:
+        dry_loose_snow: Dry Loose snow
+        storm_slab: Storm slab
+        wind_slab: Wind slab
+        persistent_slab: Persistent slab
+        deep_persistent_slab: Deep Persistent slab
+        glide_slab: Glide slab
+        wet_loose_snow: Wet Loose snow
+        wet_slab: Wet slab
+      triggering:
+        certain: 確実 Certain
+        very_likely: とても可能性が高い Very Likely
+        likely: 可能性が高い Likely
+        possible: ありうる Possible
+        unlikely: 可能性が低い Unlikely
+      sensitivity:
+        unreactive: 反応なし Unreactive
+        stubborn: 鈍い Stubborn
+        reactive: 反応する Reactive
+        touchy: 敏感 Touchy
+      spatial:
+        isolated: 孤立 Isolated
+        specific: 特定 Specific
+        widespread: 広範囲 Widespread
+      danger_rating:
+        extreme: 5 極めて高い（Extreme）
+        high: 4 非常に高い（High）
+        considerable: 3 警戒（Considerable）
+        moderate: 2 留意（Moderate）
+        low: 1 低い（Low）
+      confidence:
+        good: Good
+        fair: Fair
+        poor: Poor
 
   date:
     abbr_day_names:
