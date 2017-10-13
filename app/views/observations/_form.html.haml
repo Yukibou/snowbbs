@@ -1,47 +1,71 @@
 = simple_form_for(@observation, wrapper: :horizontal_form, html: { class: 'form-horizontal' }) do |f|
   = f.error_notification
 
-  .form-inputs
-    = f.input :observation_at, wrapper: :horizontal_select_date, as: :date
-    = f.association :area
-    = f.input :mountain
-    = f.input :location
-    = f.input :elevation_low
-    = f.input :elevation_low_comments
-    = f.input :elevation_high
-    = f.input :elevation_high_comments
-    = f.input :temperature
-    = f.input :sky
-    = f.input :sky_comments
-    = f.input :wind_speed
-    = f.input :wind_direction
-    = f.input :wind_comments
-    = f.input :precipitation_type
-    = f.input :precipitation_rate
-    = f.input :precipitation_comments
-    = f.input :avalanches
-    = f.input :avalanche_occurred, wrapper: :horizontal_radio_and_checkboxes
-    = f.input :snowpack
-    = f.input :spin_url
-    = f.input :comments
-
-  %hr
-  .form-inputs
-    = f.simple_fields_for :evaluations do |ef|
-      = ef.input :priority
-      = ef.input :problem
-      = ef.input :has_observe, wrapper: :horizontal_radio_and_checkboxes
-      = ef.input :weak_layer
-      = ef.input :potential_size
-      = ef.input :triggering
-      = ef.input :sensitivity
-      = ef.input :spatial
-      = ef.input :terrain
-      = ef.input :memo
-      = ef.input :zone
-      = ef.input :danger_rating
-      = ef.input :comments
-      = ef.input :confidence
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        日付と場所 Date & Location
+    .panel-body
+      .form-inputs
+        = f.input :observation_at, wrapper: :horizontal_select_date, as: :date
+        = f.association :area
+        = f.input :mountain
+        = f.input :location
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        観察データ Observation data
+    .panel-body
+      .form-inputs
+        = f.input :elevation_low
+        = f.input :elevation_low_comments
+        = f.input :elevation_high
+        = f.input :elevation_high_comments
+        = f.input :temperature
+        = f.input :sky
+        = f.input :sky_comments
+        = f.input :wind_speed
+        = f.input :wind_direction
+        = f.input :wind_comments
+        = f.input :precipitation_type
+        = f.input :precipitation_rate
+        = f.input :precipitation_comments
+        = f.input :avalanches
+        = f.input :avalanche_occurred, wrapper: :horizontal_radio_and_checkboxes
+        = f.input :snowpack
+        = f.input :spin_url
+        = f.input :comments
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        評価 Evaluation
+    .panel-body
+      .form-inputs
+        = f.simple_fields_for :evaluations do |ef|
+          .panel.panel-info
+            .panel-heading
+              %h3.panel-title
+                ハザード評価 Hazard Evaluation
+            .panel-body
+              = ef.input :priority
+              = ef.input :problem
+              = ef.input :has_observe, wrapper: :horizontal_radio_and_checkboxes
+              = ef.input :weak_layer
+              = ef.input :potential_size
+              = ef.input :triggering
+              = ef.input :sensitivity
+              = ef.input :spatial
+              = ef.input :terrain
+              = ef.input :memo
+          .panel.panel-info
+            .panel-heading
+              %h3.panel-title
+                雪崩危険度 Danger Rating
+            .panel-body
+              = ef.input :zone
+              = ef.input :danger_rating
+              = ef.input :comments
+              = ef.input :confidence
 
   .form-actions
     = f.button :submit, class: 'btn btn-primary'
