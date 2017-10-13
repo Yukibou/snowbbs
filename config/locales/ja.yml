@@ -37,10 +37,10 @@ ja:
         mountain: 山岳 Mountain *
         location: 場所 Location *
         elevation: 標高 Elevation
-        elevation_low: 標高低 Elevation
-        elevation_low_comments: 標高コメント Elevation
-        elevation_high: 標高高 Elevation
-        elevation_high_comments: 標高コメント Elevation
+        elevation_low: 標高（低） Elevation low
+        elevation_low_comments: 標高（低）コメント Elevation low comments
+        elevation_high: 標高（高） Elevation high
+        elevation_high_comments: 標高（高）コメント Elevation high comments
         temperature: 気温 Temp.
         sky: 天気 Sky
         sky_comments: 天気コメントComments
