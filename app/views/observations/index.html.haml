@@ -14,13 +14,12 @@
   %tbody
     - @observations.each do |observation|
       %tr
-        %td= observation.observation_at.strftime("%y%m%d")
+        %td= link_to observation.observation_at.strftime("%y%m%d"), observation
         %td= observation.area.name
         %td= observation.mountain
         %td= observation.location
         %td= observation.user.name
         %td= observation.created_at.strftime("%y%m%d")
-        %td= link_to 'Show', observation
         %td= link_to 'Edit', edit_observation_path(observation)
         %td= link_to 'Destroy', observation, method: :delete, data: { confirm: 'Are you sure?' }
 
