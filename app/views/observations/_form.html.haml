@@ -7,6 +7,7 @@
         日付と場所 Date & Location
     .panel-body
       .form-inputs
+        = f.input :publish, wrapper: :horizontal_radio_and_checkboxes
         = f.input :observation_at, wrapper: :horizontal_select_date, as: :date
         = f.association :area
         = f.input :mountain

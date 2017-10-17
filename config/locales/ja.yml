@@ -57,6 +57,7 @@ ja:
         snowpack: 積雪構造 Snowpack
         spin_url: SPIN有無
         comments: コメント Comments
+        publish: 公開 Publish
       observation/evaluation: *evaluation
       user:
         email: メールアドレス

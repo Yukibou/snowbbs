@@ -93,6 +93,7 @@ class ObservationsController < ApplicationController
         :snowpack,
         :spin_url,
         :comments,
+        :publish,
         evaluations_attributes: [
             :_destroy,
             :priority,

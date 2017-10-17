@@ -1,6 +1,7 @@
 %table.table.table-striped
   %thead
     %tr
+      %th= t('activerecord.attributes.observation.publish')
       %th= t('activerecord.attributes.observation.observation_at')
       %th= t('activerecord.attributes.observation.area')
       %th= t('activerecord.attributes.observation.mountain')
@@ -14,6 +15,7 @@
   %tbody
     - @observations.each do |observation|
       %tr
+        %td= observation.publish
         %td= link_to observation.observation_at.strftime("%y%m%d"), observation
         %td= observation.area.name
         %td= observation.mountain
