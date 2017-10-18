@@ -1,0 +1,33 @@
+.panel.panel-info
+  .panel-heading
+    %h3.panel-title
+      評価 Evaluation
+  .panel-body
+    .form-inputs
+
+      .panel.panel-info
+        .panel-heading
+          %h3.panel-title
+            ハザード評価 Hazard Evaluation
+        .panel-body
+          = f.input :priority
+          = f.input :problem
+          = f.input :has_observe, wrapper: :horizontal_radio_and_checkboxes
+          = f.input :weak_layer
+          = f.input :potential_size
+          = f.input :triggering
+          = f.input :sensitivity
+          = f.input :spatial
+          = f.input :terrain
+          = f.input :memo
+      .panel.panel-info
+        .panel-heading
+          %h3.panel-title
+            雪崩危険度 Danger Rating
+        .panel-body
+          = f.input :zone
+          = f.input :danger_rating
+          = f.input :comments
+          = f.input :confidence
+      = f.hidden_field :_destroy
+      = link_to "削除", '#', class: "btn btn-danger remove_fields"

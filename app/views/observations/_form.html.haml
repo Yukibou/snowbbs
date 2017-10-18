@@ -1,6 +1,5 @@
 = simple_form_for(@observation, wrapper: :horizontal_form, html: { class: 'form-horizontal' }) do |f|
   = f.error_notification
-
   .panel.panel-info
     .panel-heading
       %h3.panel-title
@@ -36,37 +35,8 @@
         = f.input :snowpack
         = f.input :spin_url
         = f.input :comments
-  .panel.panel-info
-    .panel-heading
-      %h3.panel-title
-        評価 Evaluation
-    .panel-body
-      .form-inputs
-        = f.simple_fields_for :evaluations do |ef|
-          .panel.panel-info
-            .panel-heading
-              %h3.panel-title
-                ハザード評価 Hazard Evaluation
-            .panel-body
-              = ef.input :priority
-              = ef.input :problem
-              = ef.input :has_observe, wrapper: :horizontal_radio_and_checkboxes
-              = ef.input :weak_layer
-              = ef.input :potential_size
-              = ef.input :triggering
-              = ef.input :sensitivity
-              = ef.input :spatial
-              = ef.input :terrain
-              = ef.input :memo
-          .panel.panel-info
-            .panel-heading
-              %h3.panel-title
-                雪崩危険度 Danger Rating
-            .panel-body
-              = ef.input :zone
-              = ef.input :danger_rating
-              = ef.input :comments
-              = ef.input :confidence
+  = f.simple_fields_for :evaluations do |ef|
+    = render 'evaluation_fields', f: ef
 
   .form-actions
     = f.button :submit, class: 'btn btn-primary'
