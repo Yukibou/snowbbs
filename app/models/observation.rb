@@ -12,4 +12,6 @@ class Observation < ApplicationRecord
   enumerize :wind_speed, in: [:c, :l, :m, :s, :x]
   enumerize :wind_direction, in: [:n, :ne, :e, :se, :s, :sw, :w, :nw]
   enumerize :precipitation_type, in: [:nil, :r, :s, :rs, :g, :zr]
+
+  REGISTRABLE_ATTRIBUTES = %i(_destroy id priority problem has_observe weak_layer potential_size triggering sensitivity spatial terrain memo zone danger_rating comments confidence)
 end

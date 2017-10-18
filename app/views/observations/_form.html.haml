@@ -35,8 +35,9 @@
         = f.input :snowpack
         = f.input :spin_url
         = f.input :comments
-  = f.simple_fields_for :evaluations do |ef|
-    = render 'evaluation_fields', f: ef
-
+  .field
+    = f.simple_fields_for :evaluations do |ef|
+      = render 'evaluation_fields', f: ef
+    = link_to_add_association '評価データの追加', f, :evaluations, class: 'btn btn-info'
   .form-actions
     = f.button :submit, class: 'btn btn-primary'

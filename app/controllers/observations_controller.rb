@@ -94,22 +94,6 @@ class ObservationsController < ApplicationController
         :spin_url,
         :comments,
         :publish,
-        evaluations_attributes: [
-            :_destroy,
-            :priority,
-            :problem,
-            :has_observe,
-            :weak_layer,
-            :potential_size,
-            :triggering,
-            :sensitivity,
-            :spatial,
-            :terrain,
-            :memo,
-            :zone,
-            :danger_rating,
-            :comments,
-            :confidence,
-        ])
+        evaluations_attributes: Observation::REGISTRABLE_ATTRIBUTES)
   end
 end

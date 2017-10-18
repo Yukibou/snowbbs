@@ -25,6 +25,7 @@ gem 'pg'
 gem 'pundit'
 gem 'simple_form'
 gem 'enumerize'
+gem 'cocoon'
 
 group :development do
   gem 'byebug', platform: :mri
