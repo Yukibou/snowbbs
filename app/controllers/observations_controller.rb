@@ -89,6 +89,7 @@ class ObservationsController < ApplicationController
         :spin_url,
         :comments,
         :publish,
+        :movie_url,
         evaluations_attributes: Observation::REGISTRABLE_ATTRIBUTES)
   end
 end

@@ -58,6 +58,7 @@ ja:
         spin_url: SPIN有無
         comments: コメント Comments
         publish: 公開 Publish
+        movie_url: 動画URL Movie
       observation/evaluation: *evaluation
       user:
         email: メールアドレス
