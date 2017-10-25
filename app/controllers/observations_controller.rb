@@ -1,5 +1,7 @@
 class ObservationsController < ApplicationController
   before_action :set_observation, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_observation, only: [:index, :new, :create]
+  after_action :verify_authorized
 
   def index
     @observations = Observation.all
@@ -54,6 +56,11 @@ class ObservationsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_observation
     @observation = Observation.find(params[:id])
+    authorize @observation
+  end
+
+  def authorize_observation
+    authorize Observation
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

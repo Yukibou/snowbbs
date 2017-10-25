@@ -24,9 +24,8 @@
         %td= observation.location
         %td= observation.user.name
         %td= observation.created_at.strftime("%y%m%d")
-        %td= link_to 'Edit', edit_observation_path(observation)
-        %td= link_to 'Destroy', observation, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to_if(policy(observation).update?, t('link.Edit'), edit_observation_path(observation), class: 'btn btn-xs btn-info'){}
+        %td= link_to_if(policy(observation).destroy?, t('link.Destroy'), observation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger'){}
 
-%br
-
-= link_to 'New Observation', new_observation_path, class: 'btn btn-default'
+- if policy(@observations).new?
+  = link_to t('link.New'), new_observation_path, class: 'btn btn-default'
