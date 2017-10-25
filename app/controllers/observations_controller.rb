@@ -1,29 +1,21 @@
 class ObservationsController < ApplicationController
   before_action :set_observation, only: [:show, :edit, :update, :destroy]
 
-  # GET /observations
-  # GET /observations.json
   def index
     @observations = Observation.all
   end
 
-  # GET /observations/1
-  # GET /observations/1.json
   def show
   end
 
-  # GET /observations/new
   def new
     @observation = current_user.observations.new
     @observation.evaluations.build
   end
 
-  # GET /observations/1/edit
   def edit
   end
 
-  # POST /observations
-  # POST /observations.json
   def create
     @observation = current_user.observations.new(observation_params)
 
@@ -38,8 +30,6 @@ class ObservationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /observations/1
-  # PATCH/PUT /observations/1.json
   def update
     respond_to do |format|
       if @observation.update(observation_params)
@@ -52,8 +42,6 @@ class ObservationsController < ApplicationController
     end
   end
 
-  # DELETE /observations/1
-  # DELETE /observations/1.json
   def destroy
     @observation.destroy
     respond_to do |format|
