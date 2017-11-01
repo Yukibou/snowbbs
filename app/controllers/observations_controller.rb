@@ -90,6 +90,7 @@ class ObservationsController < ApplicationController
         :comments,
         :publish,
         :movie_url,
+        {images: []},
         evaluations_attributes: Observation::REGISTRABLE_ATTRIBUTES)
   end
 end
