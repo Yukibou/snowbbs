@@ -26,6 +26,9 @@ gem 'pundit'
 gem 'simple_form'
 gem 'enumerize'
 gem 'cocoon'
+gem 'carrierwave'
+gem 'rmagick', require: 'rmagick'
+gem 'fog'
 
 group :development do
   gem 'byebug', platform: :mri
