@@ -15,5 +15,5 @@ class Observation < ApplicationRecord
   enumerize :wind_direction, in: [:n, :ne, :e, :se, :s, :sw, :w, :nw]
   enumerize :precipitation_type, in: [:nil, :r, :s, :rs, :g, :zr]
 
-  REGISTRABLE_ATTRIBUTES = %i(_destroy id priority problem has_observe weak_layer potential_size triggering sensitivity spatial terrain memo zone danger_rating comments confidence)
+  REGISTRABLE_ATTRIBUTES = %i(publish observation_at area_id mountain location elevation_low elevation_low_comments elevation_high elevation_high_comments temperature sky sky_comments wind_speed wind_direction wind_comments precipitation_type precipitation_rate precipitation_comments avalanches avalanche_occurred snowpack spin_url comments movie_url)
 end

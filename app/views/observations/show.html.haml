@@ -1,8 +1,74 @@
 %p#notice= notice
 
-%p
-  %b Observation at:
-  = @observation.observation_at
+.panel.panel-info
+  .panel-heading
+    %h3.panel-title
+      日付と場所 Date & Location
+  .panel-body
+    %table.table.table-bordered.table-striped
+      %tr
+        %td
+          = t('activerecord.attributes.observation.user')
+        %td
+          = @observation.user.name
+      %tr
+        %td
+          = t('activerecord.attributes.observation.observation_at')
+        %td
+          = @observation.observation_at
+      %tr
+        %td
+          = t('activerecord.attributes.observation.area')
+        %td
+          = @observation.area.name
+      %tr
+        %td
+          = t('activerecord.attributes.observation.mountain')
+        %td
+          = @observation.mountain
+      %tr
+        %td
+          = t('activerecord.attributes.observation.location')
+        %td
+          = @observation.location
+.panel.panel-info
+  .panel-heading
+    %h3.panel-title
+      観察データ Observation data
+  .panel-body
+    %table.table.table-bordered.table-striped
+      %tr
+        %td
+          = t('activerecord.attributes.observation.elevation_low')
+        %td
+          = @observation.elevation_low
+        %td
+          = t('activerecord.attributes.observation.elevation_high')
+        %td
+          = @observation.elevation_high
+      %tr
+        %td
+          = t('activerecord.attributes.observation.temperature')
+        %td
+          = @observation.temperature
+      %tr
+        %td
+          = t('activerecord.attributes.observation.sky')
+        %td
+          = @observation.sky
+        %td
+          = t('activerecord.attributes.observation.sky_comments')
+        %td
+          = @observation.sky_comments
+      %tr
+        %td
+          = t('activerecord.attributes.observation.wind_speed')
+        %td
+          = @observation.wind_speed
+        %td
+          = t('activerecord.attributes.observation.wind_direction')
+        %td
+          = @observation.wind_direction
 
 = link_to 'Edit', edit_observation_path(@observation)
 \|
