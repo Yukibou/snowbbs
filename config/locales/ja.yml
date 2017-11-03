@@ -13,7 +13,14 @@ ja:
       evaluation: 評価データ
       observation: 観察データ
       user: ユーザー
+      danger_rating: 雪崩危険度
     attributes:
+      danger_rating: &danger_rating
+        alpine_zone: アルパイン危険度 Alpine
+        treeline_zone: 森林限界危険度 Treeline
+        below_treeline_zone: 森林帯危険度 Below Treeline
+        comments: コメント Comments
+        confidence: 信頼度 Confidence
       evaluation: &evaluation
         priority: 重要度 Priority
         problem: 留意すべき雪崩 Avalanche Problem
@@ -25,10 +32,6 @@ ja:
         spatial: 空間分布 Spatial Distribution
         terrain: 地形特徴 Terrain Features
         memo: メモ memo
-        zone: 標高域 Zone
-        danger_rating: 危険度 Danger Rating
-        comments: コメント Comments
-        confidence: 信頼度 Confidence
       observation:
         user: 投稿者 Observer *
         observation_at:	観察日付 Date *
@@ -60,6 +63,7 @@ ja:
         publish: 公開 Publish
         movie_url: 動画URL Movie
       observation/evaluation: *evaluation
+      observation/danger_rating: *danger_rating
       user:
         email: メールアドレス
         name: 氏名
@@ -125,7 +129,20 @@ ja:
         isolated: 孤立 Isolated
         specific: 特定 Specific
         widespread: 広範囲 Widespread
-      danger_rating:
+    danger_rating:
+      alpine_zone:
+        extreme: 5 極めて高い（Extreme）
+        high: 4 高い（High）
+        considerable: 3 警戒（Considerable）
+        moderate: 2 留意（Moderate）
+        low: 1 低い（Low）
+      treeline_zone:
+        extreme: 5 極めて高い（Extreme）
+        high: 4 高い（High）
+        considerable: 3 警戒（Considerable）
+        moderate: 2 留意（Moderate）
+        low: 1 低い（Low）
+      below_treeline_zone:
         extreme: 5 極めて高い（Extreme）
         high: 4 高い（High）
         considerable: 3 警戒（Considerable）

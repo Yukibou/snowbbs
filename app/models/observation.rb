@@ -3,7 +3,9 @@ class Observation < ApplicationRecord
   belongs_to :user
   belongs_to :area
   has_many :evaluations, dependent: :delete_all, inverse_of: :observation
+  has_one :danger_rating, dependent: :delete, inverse_of: :observation
   accepts_nested_attributes_for :evaluations
+  accepts_nested_attributes_for :danger_rating
 
   mount_uploaders :images, ImageUploader
 

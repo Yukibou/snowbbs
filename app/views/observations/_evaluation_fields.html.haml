@@ -2,31 +2,17 @@
   .panel.panel-info
     .panel-heading
       %h3.panel-title
-        評価 Evaluation
+        ハザード評価 Hazard Evaluation
     .panel-body
       .form-inputs
-        .panel.panel-info
-          .panel-heading
-            %h3.panel-title
-              ハザード評価 Hazard Evaluation
-          .panel-body
-            = f.input :priority
-            = f.input :problem
-            = f.input :has_observe, wrapper: :horizontal_radio_and_checkboxes
-            = f.input :weak_layer
-            = f.input :potential_size
-            = f.input :triggering
-            = f.input :sensitivity
-            = f.input :spatial
-            = f.input :terrain
-            = f.input :memo
-        .panel.panel-info
-          .panel-heading
-            %h3.panel-title
-              雪崩危険度 Danger Rating
-          .panel-body
-            = f.input :zone
-            = f.input :danger_rating
-            = f.input :comments
-            = f.input :confidence
-        = link_to_remove_association "評価の削除", f, class: 'btn btn-danger'
+        = f.input :priority
+        = f.input :problem
+        = f.input :has_observe, wrapper: :horizontal_radio_and_checkboxes
+        = f.input :weak_layer
+        = f.input :potential_size
+        = f.input :triggering
+        = f.input :sensitivity
+        = f.input :spatial
+        = f.input :terrain
+        = f.input :memo
+      = link_to_remove_association "このハザード評価の削除", f, class: 'btn btn-danger'

@@ -15,8 +15,6 @@ class Evaluation < ApplicationRecord
   enumerize :triggering, in: [:certain, :very_likely, :likely, :possible, :unlikely]
   enumerize :sensitivity, in: [:unreactive, :stubborn, :reactive, :touchy]
   enumerize :spatial, in: [:isolated, :specific, :widespread]
-  enumerize :danger_rating, in: [:extreme, :high, :considerable, :moderate, :low]
-  enumerize :confidence, in: [:good, :fair, :poor]
 
-  REGISTRABLE_ATTRIBUTES = %i(_destroy id priority problem has_observe weak_layer potential_size triggering sensitivity spatial terrain memo zone danger_rating comments confidence)
+  REGISTRABLE_ATTRIBUTES = %i(_destroy id priority problem has_observe weak_layer potential_size triggering sensitivity spatial terrain memo)
 end

@@ -13,6 +13,7 @@ class ObservationsController < ApplicationController
   def new
     @observation = current_user.observations.new
     @observation.evaluations.build
+    @observation.build_danger_rating
   end
 
   def edit
@@ -91,6 +92,7 @@ class ObservationsController < ApplicationController
         :publish,
         :movie_url,
         {images: []},
-        evaluations_attributes: Evaluation::REGISTRABLE_ATTRIBUTES)
+        evaluations_attributes: Evaluation::REGISTRABLE_ATTRIBUTES,
+        danger_rating_attributes: DangerRating::REGISTRABLE_ATTRIBUTES)
   end
 end
