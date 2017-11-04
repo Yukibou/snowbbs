@@ -10,7 +10,7 @@ class Observation < ApplicationRecord
   mount_uploaders :images, ImageUploader
 
   validates :user, :observation_at, :area, :mountain, :location, presence: true
-  validates :elevation_low, :elevation_high, :temperature, numericality: true, allow_blank: true
+  validates :elevation_low, :elevation_high, :temperature_low, :temperature_high, numericality: true, allow_blank: true
 
   enumerize :sky, in: [:clr, :few, :sct, :bkn, :ovc, :x]
   enumerize :wind_speed, in: [:c, :l, :m, :s, :x]

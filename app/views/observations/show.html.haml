@@ -48,9 +48,13 @@
           = @observation.elevation_high
       %tr
         %td
-          = t('activerecord.attributes.observation.temperature')
+          = t('activerecord.attributes.observation.temperature_low')
         %td
-          = @observation.temperature
+          = "#{@observation.temperature_low}(#{@observation.temperature_low_comments})"
+        %td
+          = t('activerecord.attributes.observation.temperature_high')
+        %td
+          = "#{@observation.temperature_high}(#{@observation.temperature_high_comments})"
       %tr
         %td
           = t('activerecord.attributes.observation.sky')
