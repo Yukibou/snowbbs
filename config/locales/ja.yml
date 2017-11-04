@@ -39,11 +39,8 @@ ja:
         area: エリア Range *
         mountain: 山岳 Mountain *
         location: 場所 Location *
-        elevation: 標高 Elevation
         elevation_low: 標高（低） Elevation low
-        elevation_low_comments: 標高（低）コメント Elevation low comments
         elevation_high: 標高（高） Elevation high
-        elevation_high_comments: 標高（高）コメント Elevation high comments
         temperature_low: 気温（低） Temp. low
         temperature_low_comments: 気温（低）コメント Temp. low comments
         temperature_high: 気温（高） Temp. high

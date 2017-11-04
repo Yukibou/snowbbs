@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171104044319) do
+ActiveRecord::Schema.define(version: 20171104050229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,12 +55,8 @@ ActiveRecord::Schema.define(version: 20171104044319) do
     t.datetime "observation_at"
     t.string   "mountain"
     t.string   "location"
-    t.string   "elevation"
     t.integer  "elevation_low"
-    t.string   "elevation_low_comments"
     t.integer  "elevation_high"
-    t.string   "elevation_high_comments"
-    t.integer  "temperature"
     t.string   "sky"
     t.string   "sky_comments"
     t.string   "wind_speed"
