@@ -39,8 +39,10 @@ ja:
         area: エリア Range *
         mountain: 山岳 Mountain *
         location: 場所 Location *
+        elevation: 標高 Elevation
         elevation_low: 標高（低） Elevation low
         elevation_high: 標高（高） Elevation high
+        temperature: 気温 Temp.
         temperature_low: 気温（低） Temp. low
         temperature_low_comments: 気温（低）コメント Temp. low comments
         temperature_high: 気温（高） Temp. high
@@ -51,7 +53,7 @@ ja:
         wind_speed:	風速 Speed
         wind_direction: 風向 Direction
         wind_comments: 風コメント Comments
-        降水: Precipitation
+        precipitation: 降水 Precipitation
         precipitation_type: 種類 Type
         precipitation_rate: 強度 Rate
         precipitation_comments: 降水コメント Comments
