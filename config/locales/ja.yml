@@ -33,12 +33,12 @@ ja:
         terrain: 地形特徴 Terrain Features
         memo: メモ memo
       observation:
-        user: 投稿者 Observer *
-        observation_at:	観察日付 Date *
-        created_at: 投稿日時 Time *
-        area: エリア Range *
-        mountain: 山岳 Mountain *
-        location: 場所 Location *
+        user: 投稿者 Observer
+        observation_at:	観察日付 Date
+        created_at: 投稿日時 Time
+        area: エリア Range
+        mountain: 山岳 Mountain
+        location: 場所 Location
         elevation: 標高 Elevation
         elevation_low: 標高（低） Elevation low
         elevation_high: 標高（高） Elevation high
