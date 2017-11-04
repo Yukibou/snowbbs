@@ -8,8 +8,7 @@ class ObservationPolicy < ApplicationPolicy
   end
 
   def create?
-    # true
-    user.present?
+    user.admin? || user.observer?
   end
 
   def new?
@@ -17,7 +16,6 @@ class ObservationPolicy < ApplicationPolicy
   end
 
   def update?
-    # true
     if user.present?
       user.admin? || record.user_id == user.id
     end
@@ -28,9 +26,18 @@ class ObservationPolicy < ApplicationPolicy
   end
 
   def destroy?
-    # true
     if user.present?
       user.admin? || record.user_id == user.id
+    end
+  end
+
+  class Scope < Struct.new(:user, :scope)
+    def resolve
+      if user.admin?
+        scope.all
+      else
+        scope.where(publish: true)
+      end
     end
   end
 end

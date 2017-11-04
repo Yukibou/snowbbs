@@ -4,7 +4,8 @@ class ObservationsController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @observations = Observation.all
+    # @observations = Observation.all
+    @observations = policy_scope(Observation)
   end
 
   def show
@@ -61,7 +62,8 @@ class ObservationsController < ApplicationController
   end
 
   def authorize_observation
-    authorize Observation
+    # authorize Observation
+    authorize policy_scope(Observation)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
