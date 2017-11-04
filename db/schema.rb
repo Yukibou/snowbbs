@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103101310) do
+ActiveRecord::Schema.define(version: 20171104044319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,16 +70,20 @@ ActiveRecord::Schema.define(version: 20171103101310) do
     t.string   "precipitation_rate"
     t.string   "precipitation_comments"
     t.string   "avalanches"
-    t.boolean  "avalanche_occurred",      default: false
+    t.boolean  "avalanche_occurred",                                default: false
     t.string   "snowpack"
     t.string   "spin_url"
     t.string   "comments"
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
     t.integer  "area_id"
-    t.boolean  "publish",                 default: false
+    t.boolean  "publish",                                           default: false
     t.string   "movie_url"
-    t.string   "images",                  default: [],                 array: true
+    t.string   "images",                                            default: [],                 array: true
+    t.decimal  "temperature_low",           precision: 3, scale: 1
+    t.decimal  "temperature_high",          precision: 3, scale: 1
+    t.string   "temperature_low_comments"
+    t.string   "temperature_high_comments"
     t.index ["area_id"], name: "index_observations_on_area_id", using: :btree
     t.index ["user_id"], name: "index_observations_on_user_id", using: :btree
   end
