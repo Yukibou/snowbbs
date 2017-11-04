@@ -36,7 +36,7 @@
         = f.input :snowpack
         = f.input :spin_url
         = f.input :comments
-        = f.input :images, as: :file, input_html: { multiple: true }
+        = f.input :images, as: :file, input_html: { multiple: true }, wrapper: :horizontal_file_input
         = f.input :movie_url
   .panel.panel-info
     .panel-heading

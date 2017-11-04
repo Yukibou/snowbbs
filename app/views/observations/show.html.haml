@@ -3,6 +3,10 @@
     %h3.panel-title
       日付と場所 Date & Location
   .panel-body
+    .observation-image
+      - @observation.images.each do |image|
+        = image_tag image, width: '240'
+
     %table.table.table-bordered.table-striped
       %tr
         %td

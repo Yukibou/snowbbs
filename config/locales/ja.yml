@@ -64,6 +64,7 @@ ja:
         comments: コメント Comments
         publish: 公開 Publish
         movie_url: 動画URL Movie
+        images: 写真 Picture
       observation/evaluation: *evaluation
       observation/danger_rating: *danger_rating
       user:
