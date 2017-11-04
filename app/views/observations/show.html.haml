@@ -82,7 +82,7 @@
         %td.td-nowrap
           = t('activerecord.attributes.observation.avalanche_occurred')
         %td
-          = @observation.avalanche_occurred
+          = to_yes_no @observation.avalanche_occurred
       %tr
         %td.td-nowrap
           = t('activerecord.attributes.observation.snowpack')
