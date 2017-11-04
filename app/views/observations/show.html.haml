@@ -34,70 +34,9 @@
           = t('activerecord.attributes.observation.location')
         %td
           = @observation.location
-.panel.panel-info
-  .panel-heading
-    %h3.panel-title
-      観察データ Observation data
-  .panel-body
-    %table.table.table-bordered.table-striped
-      %tr
-        %td.td-nowrap
-          = t('activerecord.attributes.observation.elevation')
-        %td
-          = "#{@observation.elevation_low}〜#{@observation.elevation_high}m"
-      %tr
-        %td.td-nowrap
-          = t('activerecord.attributes.observation.temperature')
-        %td
-          = "#{with_comments(@observation.temperature_low, @observation.temperature_low_comments)} / #{with_comments(@observation.temperature_high, @observation.temperature_high_comments)}"
-      %tr
-        %td.td-nowrap
-          = t('activerecord.attributes.observation.sky')
-        %td
-          = with_comments(@observation.sky, @observation.sky_comments)
-      %tr
-        %td.td-nowrap
-          = t('activerecord.attributes.observation.wind')
-        %td
-          = with_label(t('activerecord.attributes.observation.wind_speed'), @observation.wind_speed)
-          %br
-          = with_label(t('activerecord.attributes.observation.wind_direction'), @observation.wind_direction)
-          %br
-          = with_label(t('activerecord.attributes.observation.wind_comments'), @observation.wind_comments)
-      %tr
-        %td.td-nowrap
-          = t('activerecord.attributes.observation.precipitation')
-        %td
-          = with_label(t('activerecord.attributes.observation.precipitation_type'), @observation.precipitation_type)
-          %br
-          = with_label(t('activerecord.attributes.observation.precipitation_rate'), @observation.precipitation_rate)
-          %br
-          = with_label(t('activerecord.attributes.observation.precipitation_comments'), @observation.precipitation_comments)
-      %tr
-        %td.td-nowrap
-          = t('activerecord.attributes.observation.avalanches')
-        %td
-          = @observation.avalanches
-      %tr
-        %td.td-nowrap
-          = t('activerecord.attributes.observation.avalanche_occurred')
-        %td
-          = to_yes_no @observation.avalanche_occurred
-      %tr
-        %td.td-nowrap
-          = t('activerecord.attributes.observation.snowpack')
-        %td
-          = @observation.snowpack
-      %tr
-        %td.td-nowrap
-          = t('activerecord.attributes.observation.spin_url')
-        %td
-          = link_to @observation.spin_url, @observation.spin_url, target: '_blank'
-      %tr
-        %td.td-nowrap
-          = t('activerecord.attributes.observation.comments')
-        %td
-          = @observation.comments
+= render 'observation_detail', observation: @observation
+= render 'evaluation', observation: @observation
+
 = link_to 'Edit', edit_observation_path(@observation)
 \|
 = link_to 'Back', observations_path

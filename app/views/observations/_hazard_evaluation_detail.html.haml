@@ -1,0 +1,57 @@
+- observation.evaluations.each do |evaluation|
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        ハザード評価 Hazard Evaluation
+    .panel-body
+      %table.table.table-bordered.table-striped
+        %tr
+          %td.td-nowrap
+            = t('activerecord.attributes.evaluation.priority')
+          %td
+            = evaluation.priority
+        %tr
+          %td
+            = t('activerecord.attributes.evaluation.problem')
+          %td
+            = evaluation.problem_text
+        %tr
+          %td
+            = t('activerecord.attributes.evaluation.has_observe')
+          %td
+            = to_yes_no(evaluation.has_observe)
+        %tr
+          %td
+            = t('activerecord.attributes.evaluation.weak_layer')
+          %td
+            = evaluation.weak_layer
+        %tr
+          %td
+            = t('activerecord.attributes.evaluation.potential_size')
+          %td
+            = evaluation.potential_size
+        %tr
+          %td
+            = t('activerecord.attributes.evaluation.triggering')
+          %td
+            = evaluation.triggering_text
+        %tr
+          %td
+            = t('activerecord.attributes.evaluation.sensitivity')
+          %td
+            = evaluation.sensitivity_text
+        %tr
+          %td
+            = t('activerecord.attributes.evaluation.spatial')
+          %td
+            = evaluation.spatial_text
+        %tr
+          %td
+            = t('activerecord.attributes.evaluation.terrain')
+          %td
+            = evaluation.terrain
+        %tr
+          %td
+            = t('activerecord.attributes.evaluation.memo')
+          %td
+            = evaluation.memo
