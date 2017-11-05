@@ -4,7 +4,7 @@ class AreasController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @areas = Area.all
+    @areas = Area.all.order(:id)
     authorize Area
   end
 
