@@ -1,3 +1,9 @@
+.margin-top-10
+.panel.panel-info
+  .panel-heading
+    .panel-title
+      - observation_date = @observation.observation_at.strftime("%y%m%d")
+      = "#{observation_date} #{@observation.mountain}"
 .panel.panel-info
   .panel-heading
     %h3.panel-title
@@ -18,7 +24,7 @@
         %td
           = t('activerecord.attributes.observation.observation_at')
         %td
-          = @observation.observation_at.strftime("%y%m%d")
+          = observation_date
       %tr
         %td
           = t('activerecord.attributes.observation.created_at')
