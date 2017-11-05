@@ -43,6 +43,8 @@ class ObservationPolicy < ApplicationPolicy
     def resolve
       if user.present? && user.admin?
         scope.all
+      elsif user.present? && user.observer?
+        scope.all
       else
         scope.where(publish: true)
       end
