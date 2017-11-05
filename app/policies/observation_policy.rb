@@ -35,6 +35,10 @@ class ObservationPolicy < ApplicationPolicy
     end
   end
 
+  def public_user?
+    user.blank? || user.undefine?
+  end
+
   class Scope < Struct.new(:user, :scope)
     def resolve
       if user.present? && user.admin?

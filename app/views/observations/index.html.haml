@@ -2,7 +2,8 @@
   %thead
     %tr
       %th
-      %th= t('activerecord.attributes.observation.publish')
+      - unless policy(Observation).public_user?
+        %th= t('activerecord.attributes.observation.publish')
       %th= t('activerecord.attributes.observation.observation_at')
       %th= t('activerecord.attributes.observation.area')
       %th= t('activerecord.attributes.observation.mountain')
@@ -17,7 +18,8 @@
     - @observations.each do |observation|
       %tr
         %td= observation.id
-        %td= observation.publish
+        - unless policy(observation).public_user?
+          %td= observation.publish
         %td= link_to observation.observation_at.strftime("%y%m%d"), observation
         %td= observation.area.name
         %td= observation.mountain

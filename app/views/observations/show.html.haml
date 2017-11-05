@@ -46,7 +46,8 @@
         %td
           = @observation.location
 = render 'observation_detail', observation: @observation
-= render 'evaluation', observation: @observation
+- unless policy(@observation).public_user?
+  = render 'evaluation', observation: @observation
 
 = link_to 'Edit', edit_observation_path(@observation)
 \|
