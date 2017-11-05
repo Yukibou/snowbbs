@@ -14,6 +14,7 @@ ja:
       observation: 観察データ
       user: ユーザー
       danger_rating: 雪崩危険度
+      area: エリア
     attributes:
       danger_rating: &danger_rating
         alpine_zone: アルパイン危険度 Alpine
@@ -70,6 +71,9 @@ ja:
       user:
         email: メールアドレス
         name: 氏名
+      area:
+        name: エリア名
+        public: 公開
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"

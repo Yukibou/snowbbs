@@ -1,23 +1,20 @@
-%h1 Listing areas
+%h1 エリア一覧
 
-%table
+%table.table
   %thead
     %tr
-      %th
-      %th
-      %th
+      %th= t('activerecord.attributes.area.public')
+      %th= t('activerecord.attributes.area.name')
       %th
       %th
 
   %tbody
     - @areas.each do |area|
-      %tr
+      - klass = area.public? ? 'default' : 'warning'
+      %tr{class: "#{klass}"}
         %td= area.public
         %td= area.name
-        %td= link_to 'Show', area
         %td= link_to 'Edit', edit_area_path(area)
         %td= link_to 'Destroy', area, method: :delete, data: { confirm: 'Are you sure?' }
-
 %br
-
 = link_to 'New Area', new_area_path
