@@ -46,7 +46,7 @@ class ObservationPolicy < ApplicationPolicy
       elsif user.present? && user.observer?
         scope.all
       else
-        scope.where(publish: true).joins(:area).where(areas: {public: true})
+        scope.where(publish: true).joins(:area).where(areas: { public: true }).joins(:user).where(users: { public: true })
       end
     end
   end

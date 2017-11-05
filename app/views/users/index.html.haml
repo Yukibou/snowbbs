@@ -1,9 +1,20 @@
-.container
-  .row
-    %h3 Users
-    .column-12
-      %table.table
-        %tbody
-          - @users.each do |user|
-            %tr
-              = render user
+%h1 User一覧
+
+%table.table
+  %thead
+    %tr
+      %th= t('activerecord.attributes.user.public')
+      %th= t('activerecord.attributes.user.name')
+      %th= t('activerecord.attributes.user.role')
+      %th
+      %th
+
+  %tbody
+    - @users.each do |user|
+      - klass = user.public? ? 'default' : 'warning'
+      %tr{class: "#{klass}"}
+        %td= user.public
+        %td= user.name
+        %td= user.role
+        %td= link_to 'Edit', edit_user_path(user)
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } unless user == current_user

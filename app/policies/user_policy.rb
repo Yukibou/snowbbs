@@ -11,6 +11,10 @@ class UserPolicy < ApplicationPolicy
     @user.admin?
   end
 
+  def edit?
+    update?
+  end
+
   def destroy?
     return false if @user == @record
     @user.admin?

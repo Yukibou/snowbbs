@@ -69,8 +69,10 @@ ja:
       observation/evaluation: *evaluation
       observation/danger_rating: *danger_rating
       user:
+        public: 公開
         email: メールアドレス
         name: 氏名
+        role: 権限
       area:
         name: エリア名
         public: 公開
