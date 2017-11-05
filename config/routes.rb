@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'observations#index'
   devise_for :users
   resources :users
+  resources :areas
 end
