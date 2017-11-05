@@ -8,7 +8,11 @@ class ObservationPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin? || user.observer?
+    if user.present?
+      user.admin? || user.observer?
+    else
+      false
+    end
   end
 
   def new?
@@ -33,7 +37,7 @@ class ObservationPolicy < ApplicationPolicy
 
   class Scope < Struct.new(:user, :scope)
     def resolve
-      if user.admin?
+      if user.present? && user.admin?
         scope.all
       else
         scope.where(publish: true)
