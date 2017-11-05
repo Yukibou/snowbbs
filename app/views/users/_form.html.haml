@@ -3,6 +3,7 @@
   .form-inputs
     = f.input :public
     = f.input :name
+    = f.input :email
     = f.input :role, collection: User.roles.keys.map {|role| [role.titleize,role]}
   .form-actions
     = f.button :submit
