@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171105045121) do
+ActiveRecord::Schema.define(version: 20171109064455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20171105045121) do
     t.string   "memo"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.boolean  "has_weak_layer", default: false
     t.index ["observation_id"], name: "index_evaluations_on_observation_id", using: :btree
   end
 
