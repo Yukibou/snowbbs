@@ -27,6 +27,7 @@ ja:
         problem: 留意すべき雪崩 Avalanche Problem
         has_observe: 観察の有無 Did you observe the avalanche in the field?
         weak_layer: 弱層の確認　Did you check the weak layer of the avalanche?
+        has_weak_layer: 弱層の有無 Did you check the weak layer of the avalanche?
         potential_size: 潜在的規模 Potential Size
         triggering: 誘発の可能性 Likelihood of Triggering
         sensitivity: 誘発感度 Sensitivity to Triggers

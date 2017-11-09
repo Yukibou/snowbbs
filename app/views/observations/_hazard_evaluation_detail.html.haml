@@ -22,6 +22,11 @@
             = to_yes_no(evaluation.has_observe)
         %tr
           %td
+            = t('activerecord.attributes.evaluation.has_weak_layer')
+          %td
+            = to_yes_no(evaluation.has_weak_layer)
+        %tr
+          %td
             = t('activerecord.attributes.evaluation.weak_layer')
           %td
             = evaluation.weak_layer
