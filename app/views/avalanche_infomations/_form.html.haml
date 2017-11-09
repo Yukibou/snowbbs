@@ -1,0 +1,9 @@
+= simple_form_for(@avalanche_infomation) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :announced_at
+    = f.input :alpine_zone
+
+  .form-actions
+    = f.button :submit

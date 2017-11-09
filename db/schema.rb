@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109070421) do
+ActiveRecord::Schema.define(version: 20171109084534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,30 @@ ActiveRecord::Schema.define(version: 20171109070421) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.boolean  "public",     default: true
+  end
+
+  create_table "avalanche_infomations", force: :cascade do |t|
+    t.integer  "area_id"
+    t.datetime "announced_at"
+    t.string   "avalanche"
+    t.string   "snowpack"
+    t.string   "weather"
+    t.string   "travel_advisory"
+    t.string   "alpine_zone"
+    t.string   "alpine_trend"
+    t.string   "alpine_confidence"
+    t.string   "alpine_comments"
+    t.string   "treeline_zone"
+    t.string   "treeline_trend"
+    t.string   "treeline_confidence"
+    t.string   "treeline_comments"
+    t.string   "below_treeline_zone"
+    t.string   "below_treeline_trend"
+    t.string   "below_treeline_confidence"
+    t.string   "below_treeline_comments"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["area_id"], name: "index_avalanche_infomations_on_area_id", using: :btree
   end
 
   create_table "danger_ratings", force: :cascade do |t|

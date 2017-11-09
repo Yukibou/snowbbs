@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :avalanche_infomations
   resources :observations
   root to: 'observations#index'
   devise_for :users

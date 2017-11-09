@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Announced at:
+  = @avalanche_infomation.announced_at
+%p
+  %b Alpine zone:
+  = @avalanche_infomation.alpine_zone
+
+= link_to 'Edit', edit_avalanche_infomation_path(@avalanche_infomation)
+\|
+= link_to 'Back', avalanche_infomations_path
