@@ -36,6 +36,10 @@
         = f.input :snowpack
         = f.input :spin_url
         = f.input :comments
+        .row
+          - f.object.images.each do |image|
+            .col-sm-4.observation-image
+              = image_tag image.thumb
         = f.input :images, as: :file, input_html: { multiple: true }, wrapper: :horizontal_file_input
         = f.input :movie_url
   .panel.panel-info
