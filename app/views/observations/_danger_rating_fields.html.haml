@@ -5,7 +5,13 @@
   .panel-body
     .form-inputs
       = f.input :alpine_zone
+      = f.input :alpine_comments
+      = f.input :alpine_confidence
+      %hr
       = f.input :treeline_zone
+      = f.input :treeline_comments
+      = f.input :treeline_confidence
+      %hr
       = f.input :below_treeline_zone
-      = f.input :comments
-      = f.input :confidence
+      = f.input :below_treeline_comments
+      = f.input :below_treeline_confidence

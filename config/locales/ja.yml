@@ -18,10 +18,14 @@ ja:
     attributes:
       danger_rating: &danger_rating
         alpine_zone: アルパイン危険度 Alpine
+        alpine_comments: アルパイン コメント Alpine Comments
+        alpine_confidence: アルパイン 信頼度 Alpine Confidence
         treeline_zone: 森林限界危険度 Treeline
+        treeline_comments: 森林限界 コメント Treeline Comments
+        treeline_confidence: 森林限界 信頼度 Treeline Confidence
         below_treeline_zone: 森林帯危険度 Below Treeline
-        comments: コメント Comments
-        confidence: 信頼度 Confidence
+        below_treeline_comments: 森林帯 コメント Below Treeline Comments
+        below_treeline_confidence: 森林帯 信頼度 Below Treeline Confidence
       evaluation: &evaluation
         priority: 重要度 Priority
         problem: 留意すべき雪崩 Avalanche Problem

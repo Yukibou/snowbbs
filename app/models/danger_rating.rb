@@ -5,7 +5,9 @@ class DangerRating < ApplicationRecord
   enumerize :alpine_zone, in: [:extreme, :high, :considerable, :moderate, :low]
   enumerize :treeline_zone, in: [:extreme, :high, :considerable, :moderate, :low]
   enumerize :below_treeline_zone, in: [:extreme, :high, :considerable, :moderate, :low]
-  enumerize :confidence, in: [:good, :fair, :poor]
+  enumerize :alpine_confidence, in: [:good, :fair, :poor]
+  enumerize :treeline_confidence, in: [:good, :fair, :poor]
+  enumerize :below_treeline_confidence, in: [:good, :fair, :poor]
 
-  REGISTRABLE_ATTRIBUTES = %i(id alpine_zone treeline_zone below_treeline_zone confidence comments)
+  REGISTRABLE_ATTRIBUTES = %i(id alpine_zone treeline_zone below_treeline_zone alpine_comments treeline_comments below_treeline_comments alpine_confidence treeline_confidence below_treeline_confidence)
 end

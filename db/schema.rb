@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109064455) do
+ActiveRecord::Schema.define(version: 20171109070421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,10 +27,14 @@ ActiveRecord::Schema.define(version: 20171109064455) do
     t.string   "alpine_zone"
     t.string   "treeline_zone"
     t.string   "below_treeline_zone"
-    t.string   "comments"
-    t.string   "confidence"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "alpine_comments"
+    t.string   "alpine_confidence"
+    t.string   "treeline_comments"
+    t.string   "treeline_confidence"
+    t.string   "below_treeline_comments"
+    t.string   "below_treeline_confidence"
     t.index ["observation_id"], name: "index_danger_ratings_on_observation_id", using: :btree
   end
 
