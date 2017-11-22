@@ -1,7 +1,6 @@
 %table.table.table-striped
   %thead
     %tr
-      %th
       - unless policy(Observation).public_user?
         %th= t('activerecord.attributes.observation.publish')
       %th= t('activerecord.attributes.observation.observation_at')
@@ -9,6 +8,9 @@
       %th= t('activerecord.attributes.observation.mountain')
       %th= t('activerecord.attributes.observation.location')
       %th= t('activerecord.attributes.observation.user')
+      %th{:style => "width:48px;"}
+      %th{:style => "width:48px;"}
+      %th{:style => "width:48px;"}
       %th= t('activerecord.attributes.observation.created_at')
       %th
       %th
@@ -17,7 +19,6 @@
   %tbody
     - @observations.each do |observation|
       %tr
-        %td= observation.id
         - unless policy(observation).public_user?
           %td= observation.publish
         %td= link_to observation.observation_at.strftime("%y%m%d"), observation
@@ -25,6 +26,9 @@
         %td= observation.mountain
         %td= observation.location
         %td= observation.user.name
+        %td= image_tag 'bbs_photo.png', width: '24' if observation.images.present?
+        %td= image_tag 'bbs_spin.png', width: '24' if observation.spin_url.present?
+        %td= image_tag 'bbs_avalanche.png', width: '24' if observation.avalanche_occurred
         %td= observation.created_at.strftime("%y%m%d")
         %td= link_to_if(policy(observation).update?, t('link.Edit'), edit_observation_path(observation), class: 'btn btn-xs btn-info'){}
         %td= link_to_if(policy(observation).destroy?, t('link.Destroy'), observation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger'){}
