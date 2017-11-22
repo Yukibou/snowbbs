@@ -5,7 +5,7 @@ class ObservationsController < ApplicationController
 
   def index
     # @observations = Observation.all
-    @observations = policy_scope(Observation)
+    @observations = policy_scope(Observation).order(observation_at: :desc)
   end
 
   def show
