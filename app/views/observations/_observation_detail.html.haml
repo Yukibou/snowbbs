@@ -62,3 +62,8 @@
           = t('activerecord.attributes.observation.comments')
         %td
           = observation.comments
+      %tr
+        %td
+          = t('activerecord.attributes.observation.movie_url')
+        %td
+          = link_to(observation.movie_url, observation.movie_url, target: '_blank')
