@@ -29,7 +29,7 @@ ja:
       evaluation: &evaluation
         priority: 重要度 Priority
         problem: 留意すべき雪崩 Avalanche Problem
-        has_observe: 観察の有無 Did you observe the avalanche in the field?
+        has_observe: 雪崩の観察有無 Did you observe the avalanche in the field?
         weak_layer: 弱層の確認　Did you check the weak layer of the avalanche?
         has_weak_layer: 弱層の有無 Did you check the weak layer of the avalanche?
         potential_size: 潜在的規模 Potential Size

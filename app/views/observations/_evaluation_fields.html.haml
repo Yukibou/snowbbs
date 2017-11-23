@@ -7,8 +7,8 @@
       .form-inputs
         = f.input :priority
         = f.input :problem
-        = f.input :has_observe, wrapper: :horizontal_radio_and_checkboxes
-        = f.input :has_weak_layer, wrapper: :horizontal_radio_and_checkboxes
+        = f.input :has_observe, wrapper: :horizontal_radio_and_checkboxes, inline_label: '雪崩の観察有り'
+        = f.input :has_weak_layer, wrapper: :horizontal_radio_and_checkboxes, inline_label: '弱層有り'
         = f.input :weak_layer
         = f.input :potential_size
         = f.input :triggering
