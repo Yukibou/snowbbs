@@ -150,18 +150,21 @@ ja:
         considerable: 3 警戒（Considerable）
         moderate: 2 留意（Moderate）
         low: 1 低い（Low）
+        no_rating: 0 無い（No Rating）
       treeline_zone:
         extreme: 5 極めて高い（Extreme）
         high: 4 高い（High）
         considerable: 3 警戒（Considerable）
         moderate: 2 留意（Moderate）
         low: 1 低い（Low）
+        no_rating: 0 無い（No Rating）
       below_treeline_zone:
         extreme: 5 極めて高い（Extreme）
         high: 4 高い（High）
         considerable: 3 警戒（Considerable）
         moderate: 2 留意（Moderate）
         low: 1 低い（Low）
+        no_rating: 0 無い（No Rating）
       confidence:
         good: Good
         fair: Fair
