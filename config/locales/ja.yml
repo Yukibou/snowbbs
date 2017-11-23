@@ -60,8 +60,8 @@ ja:
         wind_direction: 風向 Direction
         wind_comments: 風コメント Comments
         precipitation: 降水 Precipitation
-        precipitation_type: 種類 Type
-        precipitation_rate: 強度 Rate
+        precipitation_type: 降水の種類 Type
+        precipitation_rate: 降水の強度 Rate
         precipitation_comments: 降水コメント Comments
         avalanches: 雪崩などの観察 Avalanches
         avalanche_occurred: 雪崩発生有無
