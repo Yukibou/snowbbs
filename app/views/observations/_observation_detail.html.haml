@@ -8,7 +8,7 @@
         %td.td-nowrap
           = t('activerecord.attributes.observation.elevation')
         %td
-          = "#{observation.elevation_low}〜#{observation.elevation_high}m"
+          = "#{observation.elevation_low}m〜#{observation.elevation_high}m"
       %tr
         %td.td-nowrap
           = t('activerecord.attributes.observation.temperature')
@@ -18,21 +18,21 @@
         %td.td-nowrap
           = t('activerecord.attributes.observation.sky')
         %td
-          = with_comments(observation.sky, observation.sky_comments)
+          = with_comments(observation.sky_text, observation.sky_comments)
       %tr
         %td.td-nowrap
           = t('activerecord.attributes.observation.wind')
         %td
-          = with_label(t('activerecord.attributes.observation.wind_speed'), observation.wind_speed)
+          = with_label(t('activerecord.attributes.observation.wind_speed'), observation.wind_speed_text)
           %br
-          = with_label(t('activerecord.attributes.observation.wind_direction'), observation.wind_direction)
+          = with_label(t('activerecord.attributes.observation.wind_direction'), observation.wind_direction_text)
           %br
           = with_label(t('activerecord.attributes.observation.wind_comments'), observation.wind_comments)
       %tr
         %td.td-nowrap
           = t('activerecord.attributes.observation.precipitation')
         %td
-          = with_label(t('activerecord.attributes.observation.precipitation_type'), observation.precipitation_type)
+          = with_label(t('activerecord.attributes.observation.precipitation_type'), observation.precipitation_type_text)
           %br
           = with_label(t('activerecord.attributes.observation.precipitation_rate'), observation.precipitation_rate)
           %br
