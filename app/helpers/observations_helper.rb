@@ -10,4 +10,8 @@ module ObservationsHelper
   def to_yes_no(value)
     value ? 'Yes' : 'No'
   end
+
+  def to_publish_value(value)
+    value ? '公開' : '非公開'
+  end
 end

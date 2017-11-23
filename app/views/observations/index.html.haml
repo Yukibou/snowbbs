@@ -22,7 +22,7 @@
     - @observations.each do |observation|
       %tr
         - unless policy(observation).public_user?
-          %td= observation.publish
+          %td= to_publish_value(observation.publish)
         %td= link_to observation.observation_at.strftime("%y%m%d"), observation
         %td= observation.area.name
         %td= observation.mountain
