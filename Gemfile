@@ -29,6 +29,7 @@ gem 'cocoon'
 gem 'carrierwave'
 gem 'rmagick', require: 'rmagick'
 gem 'fog'
+gem 'font-awesome-rails'
 
 group :development do
   gem 'byebug', platform: :mri
