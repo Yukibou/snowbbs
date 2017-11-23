@@ -31,11 +31,11 @@
         = f.input :precipitation_type
         = f.input :precipitation_rate
         = f.input :precipitation_comments
-        = f.input :avalanches
+        = f.input :avalanches, as: :text, input_html: {rows: 5}
         = f.input :avalanche_occurred, wrapper: :horizontal_radio_and_checkboxes, inline_label: '発生あり'
-        = f.input :snowpack
+        = f.input :snowpack, as: :text, input_html: {rows: 5}
         = f.input :spin_url
-        = f.input :comments
+        = f.input :comments, as: :text, input_html: {rows: 5}
         .row
           - f.object.images.each do |image|
             .col-sm-4.observation-image
