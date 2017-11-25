@@ -15,12 +15,12 @@
         %td
           = "#{with_comments(observation.temperature_low, observation.temperature_low_comments)} / #{with_comments(observation.temperature_high, observation.temperature_high_comments)}"
       %tr
-        %td.td-nowrap
+        %td
           = t('activerecord.attributes.observation.sky')
         %td
           = with_comments(observation.sky_text, observation.sky_comments)
       %tr
-        %td.td-nowrap
+        %td
           = t('activerecord.attributes.observation.wind')
         %td
           = with_label(t('activerecord.attributes.observation.wind_speed'), observation.wind_speed_text)
@@ -29,7 +29,7 @@
           %br
           = with_label(t('activerecord.attributes.observation.wind_comments'), observation.wind_comments)
       %tr
-        %td.td-nowrap
+        %td
           = t('activerecord.attributes.observation.precipitation')
         %td
           = with_label(t('activerecord.attributes.observation.precipitation_type'), observation.precipitation_type_text)
@@ -43,7 +43,7 @@
         %td
           = observation.avalanches
       %tr
-        %td.td-nowrap
+        %td
           = t('activerecord.attributes.observation.avalanche_occurred')
         %td
           = to_yes_no(observation.avalanche_occurred)
@@ -56,7 +56,7 @@
         %td
           = t('activerecord.attributes.observation.spin_url')
         %td
-          = link_to(observation.spin_url, observation.spin_url, target: '_blank')
+          = link_to_if(observation.spin_url.present?, 'SPINあり', observation.spin_url, target: '_blank'){}
       %tr
         %td
           = t('activerecord.attributes.observation.comments')
@@ -66,4 +66,4 @@
         %td
           = t('activerecord.attributes.observation.movie_url')
         %td
-          = link_to(observation.movie_url, observation.movie_url, target: '_blank')
+          = link_to_if(observation.movie_url.present?, '動画あり', observation.movie_url, target: '_blank'){}
