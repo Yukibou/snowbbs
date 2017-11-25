@@ -34,14 +34,14 @@
         = f.input :avalanches, as: :text, input_html: {rows: 5}
         = f.input :avalanche_occurred, wrapper: :horizontal_radio_and_checkboxes, inline_label: '発生あり'
         = f.input :snowpack, as: :text, input_html: {rows: 5}
-        = f.input :spin_url
+        = f.input :spin_url, placeholder: 'SPINがある場合はURLを、ない場合は空白のままとしてください。'
         = f.input :comments, as: :text, input_html: {rows: 5}
         .row
           - f.object.images.each do |image|
             .col-sm-4.observation-image
               = image_tag image.thumb
         = f.input :images, as: :file, input_html: { multiple: true }, wrapper: :horizontal_file_input
-        = f.input :movie_url
+        = f.input :movie_url, placeholder: '動画がある場合はURLを、ない場合は空白のままとしてください。'
   .panel.panel-info
     .panel-heading
       %h3.panel-title
