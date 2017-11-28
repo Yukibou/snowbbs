@@ -19,10 +19,37 @@
       .form-inputs
         = f.input :elevation_low
         = f.input :elevation_high
-        = f.input :temperature_low
-        = f.input :temperature_low_comments
-        = f.input :temperature_high
-        = f.input :temperature_high_comments
+      .row
+        .col-sm-3.control-label
+          = f.label :temperature_low
+        .col-sm-3
+          = f.input :temperature_low, label: false, placeholder: 'temp.'
+        .col-sm-3
+          = f.input :temperature_low_hrs, label: false, wrapper: :horizontal_input_group do
+            = f.input_field :temperature_low_hrs, class: 'form-control'
+            %span.input-group-addon
+              hrs
+        .col-sm-3
+          = f.input :temperature_low_elevation, label: false, wrapper: :horizontal_input_group do
+            = f.input_field :temperature_low_elevation, class: 'form-control'
+            %span.input-group-addon
+              m
+      .row
+        .col-sm-3.control-label
+          = f.label :temperature_high
+        .col-sm-3
+          = f.input :temperature_high, label: false, placeholder: 'temp.'
+        .col-sm-3
+          = f.input :temperature_high_hrs, label: false, wrapper: :horizontal_input_group do
+            = f.input_field :temperature_high_hrs, class: 'form-control'
+            %span.input-group-addon
+              hrs
+        .col-sm-3
+          = f.input :temperature_high_elevation, label: false, wrapper: :horizontal_input_group do
+            = f.input_field :temperature_high_elevation, class: 'form-control'
+            %span.input-group-addon
+              m
+      .form-inputs
         = f.input :sky
         = f.input :sky_comments
         = f.input :wind_speed

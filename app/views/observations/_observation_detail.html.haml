@@ -13,7 +13,7 @@
         %td.td-nowrap
           = t('activerecord.attributes.observation.temperature')
         %td
-          = "#{with_comments(observation.temperature_low, observation.temperature_low_comments)} / #{with_comments(observation.temperature_high, observation.temperature_high_comments)}"
+          = "#{temp_with_comments(observation.temperature_low, observation.temperature_low_hrs, observation.temperature_low_elevation) } 〜 #{temp_with_comments(observation.temperature_high, observation.temperature_high_hrs, observation.temperature_high_elevation)}"
       %tr
         %td
           = t('activerecord.attributes.observation.sky')
