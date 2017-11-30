@@ -75,11 +75,12 @@
       %h3.panel-title
         評価 Evaluation
     .panel-body
-      .field
+      #evaluations
         = f.simple_fields_for :evaluations do |ef|
           = render 'evaluation_fields', f: ef
-        = link_to_add_association 'ハザード評価の追加', f, :evaluations, class: 'btn btn-info'
-      .field
+        .links
+          = link_to_add_association 'ハザード評価の追加', f, :evaluations, class: 'btn btn-info'
+      .field.margin-top-10
         = f.simple_fields_for :danger_rating do |df|
           = render 'danger_rating_fields', f: df
   .panel.panel-info
