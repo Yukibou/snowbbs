@@ -64,9 +64,9 @@ ja:
         precipitation_rate: 降水の強度 Rate
         precipitation_comments: 降水コメント Comments
         avalanches: 雪崩などの観察 Avalanches
-        avalanche_occurred: 雪崩発生有無
+        avalanche_occurred: 雪崩発生有無 Avalanche Activities_Yes or No
         snowpack: 積雪構造 Snowpack
-        spin_url: SPIN有無
+        spin_url: SPIN有無 SPIN_Yes or NO
         comments: コメント Comments
         publish: 公開 Publish
         movie_url: 動画URL Movie
