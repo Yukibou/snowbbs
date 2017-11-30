@@ -170,7 +170,7 @@ ja:
       confidence:
         good: Good
         fair: Fair
-        poor: Poor
+        low: Low
 
   date:
     abbr_day_names:
