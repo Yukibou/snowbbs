@@ -44,6 +44,7 @@ ja:
         created_at: 投稿日時 Created At
         area: エリア Range
         mountain: 山岳 Mountain
+        co_worker: 同行者 Co-worker
         location: 場所 Location
         elevation: 標高 Elevation
         elevation_low: 標高（低） Elevation low
@@ -71,6 +72,7 @@ ja:
         publish: 公開 Publish
         movie_url: 動画URL Movie
         images: 写真 Picture
+        general_comments: 総合的なコメント General Comments
       observation/evaluation: *evaluation
       observation/danger_rating: *danger_rating
       user:

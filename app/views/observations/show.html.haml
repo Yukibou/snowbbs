@@ -45,10 +45,25 @@
           = t('activerecord.attributes.observation.location')
         %td
           = @observation.location
+      %tr
+        %td
+          = t('activerecord.attributes.observation.co_worker')
+        %td
+          = @observation.co_worker
 = render 'observation_detail', observation: @observation
 - unless policy(@observation).public_user?
   = render 'evaluation', observation: @observation
-
+.panel.panel-info
+  .panel-heading
+    %h3.panel-title
+      総括 Summary
+  .panel-body
+    %table.table.table-bordered.table-striped
+      %tr
+        %td.td-nowrap
+          = t('activerecord.attributes.observation.general_comments')
+        %td
+          = @observation.general_comments
 = link_to 'Edit', edit_observation_path(@observation)
 \|
 = link_to 'Back', observations_path

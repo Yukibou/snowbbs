@@ -11,6 +11,7 @@
         = f.association :area, collection: Area.sort_order
         = f.input :mountain
         = f.input :location
+        = f.input :co_worker
   .panel.panel-info
     .panel-heading
       %h3.panel-title
@@ -81,5 +82,12 @@
       .field
         = f.simple_fields_for :danger_rating do |df|
           = render 'danger_rating_fields', f: df
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        総括 Summary
+    .panel-body
+      .form-inputs
+        = f.input :general_comments, as: :text, input_html: {rows: 5}
   .form-actions
     = f.button :submit, class: 'btn btn-primary'

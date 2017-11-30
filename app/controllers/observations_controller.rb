@@ -73,6 +73,7 @@ class ObservationsController < ApplicationController
         :area_id,
         :mountain,
         :location,
+        :co_worker,
         :elevation_low,
         :elevation_high,
         :temperature_low,
@@ -97,6 +98,7 @@ class ObservationsController < ApplicationController
         :publish,
         :movie_url,
         {images: []},
+        :general_comments,
         evaluations_attributes: Evaluation::REGISTRABLE_ATTRIBUTES,
         danger_rating_attributes: DangerRating::REGISTRABLE_ATTRIBUTES)
   end
