@@ -16,5 +16,6 @@ class Evaluation < ApplicationRecord
   enumerize :sensitivity, in: [:unreactive, :stubborn, :reactive, :touchy]
   enumerize :spatial, in: [:isolated, :specific, :widespread]
 
+  validates :priority, numericality: { only_integer: true, greater_than: 0 }
   REGISTRABLE_ATTRIBUTES = %i(_destroy id priority problem has_observe has_weak_layer weak_layer potential_size triggering sensitivity spatial terrain memo)
 end
