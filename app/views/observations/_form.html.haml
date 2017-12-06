@@ -52,13 +52,13 @@
               m
       .form-inputs
         = f.input :sky
-        = f.input :sky_comments
+        = f.input :sky_comments, as: :text
         = f.input :wind_speed
         = f.input :wind_direction
-        = f.input :wind_comments
+        = f.input :wind_comments, as: :text
         = f.input :precipitation_type
         = f.input :precipitation_rate
-        = f.input :precipitation_comments
+        = f.input :precipitation_comments, as: :text
         = f.input :avalanches, as: :text, input_html: {rows: 5}
         = f.input :avalanche_occurred, wrapper: :horizontal_radio_and_checkboxes, inline_label: '発生あり'
         = f.input :snowpack, as: :text, input_html: {rows: 5}
