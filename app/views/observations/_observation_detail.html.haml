@@ -54,9 +54,9 @@
           = observation.snowpack
       %tr
         %td
-          = t('activerecord.attributes.observation.spin_url')
+          = t('activerecord.attributes.observation.spin_no')
         %td
-          = link_to_if(observation.spin_url.present?, 'SPINあり', observation.spin_url, target: '_blank'){}
+          = link_to_if(observation.spin_no.present?, 'Yes', observation.spin_urls, target: '_blank'){}
       %tr
         %td
           = t('activerecord.attributes.observation.comments')

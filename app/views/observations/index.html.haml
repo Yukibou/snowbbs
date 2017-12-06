@@ -29,7 +29,7 @@
         %td= observation.location
         %td= observation.user.name
         %td= image_tag 'bbs_photo.png', width: '24' if observation.images.present?
-        %td= image_tag 'bbs_spin.png', width: '24' if observation.spin_url.present?
+        %td= image_tag 'bbs_spin.png', width: '24' if observation.spin_no.present?
         %td= image_tag 'bbs_avalanche.png', width: '24' if observation.avalanche_occurred
         %td= observation.created_at.strftime("%y%m%d")
         %td= link_to_if(policy(observation).update?, t('link.Edit'), edit_observation_path(observation), class: 'btn btn-xs btn-info'){}

@@ -11,11 +11,16 @@ class Observation < ApplicationRecord
 
   validates :user, :observation_at, :area, :mountain, :location, presence: true
   validates :elevation_low, :elevation_high, :temperature_low, :temperature_high, numericality: true, allow_blank: true
+  validates :spin_no, numericality: true, allow_blank: true
 
   enumerize :sky, in: [:clr, :few, :sct, :bkn, :ovc, :x]
   enumerize :wind_speed, in: [:c, :l, :m, :s, :x]
   enumerize :wind_direction, in: [:n, :ne, :e, :se, :s, :sw, :w, :nw, :vrb]
   enumerize :precipitation_type, in: [:nil, :r, :s, :rs, :g, :zr]
 
-  REGISTRABLE_ATTRIBUTES = %i(publish observation_at area_id mountain location elevation_low elevation_low_comments elevation_high elevation_high_comments temperature sky sky_comments wind_speed wind_direction wind_comments precipitation_type precipitation_rate precipitation_comments avalanches avalanche_occurred snowpack spin_url comments movie_url)
+  REGISTRABLE_ATTRIBUTES = %i(publish observation_at area_id mountain location elevation_low elevation_low_comments elevation_high elevation_high_comments temperature sky sky_comments wind_speed wind_direction wind_comments precipitation_type precipitation_rate precipitation_comments avalanches avalanche_occurred snowpack spin_no comments movie_url)
+
+  def spin_urls
+    "http://spin.nadare.jp/profiles/#{self.spin_no}"
+  end
 end

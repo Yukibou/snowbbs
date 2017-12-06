@@ -62,7 +62,7 @@
         = f.input :avalanches, as: :text, input_html: {rows: 5}
         = f.input :avalanche_occurred, wrapper: :horizontal_radio_and_checkboxes, inline_label: '発生あり'
         = f.input :snowpack, as: :text, input_html: {rows: 5}
-        = f.input :spin_url, placeholder: 'SPINがある場合はURLを、ない場合は空白のままとしてください。'
+        = f.input :spin_no, placeholder: 'SPINのNO、ない場合は空白のまま。'
         = f.input :comments, as: :text, input_html: {rows: 5}
         .row
           - f.object.images.each do |image|

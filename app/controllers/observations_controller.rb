@@ -93,7 +93,7 @@ class ObservationsController < ApplicationController
         :avalanches,
         :avalanche_occurred,
         :snowpack,
-        :spin_url,
+        :spin_no,
         :comments,
         :publish,
         :movie_url,
