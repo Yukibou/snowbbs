@@ -113,6 +113,7 @@ ja:
         sw: SW
         w: W
         nw: NW
+        vrb: VRB
       precipitation_type:
         nil: Nil なし
         r: R 雨
