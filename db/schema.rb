@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130080519) do
+ActiveRecord::Schema.define(version: 20171206113713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 20171130080519) do
     t.datetime "created_at",                                                         null: false
     t.datetime "updated_at",                                                         null: false
     t.integer  "area_id"
-    t.boolean  "publish",                                            default: false
+    t.boolean  "publish",                                            default: true
     t.string   "movie_url"
     t.string   "images",                                             default: [],                 array: true
     t.decimal  "temperature_low",            precision: 3, scale: 1
