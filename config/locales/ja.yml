@@ -55,16 +55,16 @@ ja:
         temperature_high: 気温（高） Temp. high
         temperature_high_comments: 気温（高）コメント Temp. high comments
         sky: 天気 Sky
-        sky_comments: 天気コメントComments
+        sky_comments: 天気コメントSky Comments
         wind: 風 Wind
-        wind_speed:	風速 Speed
-        wind_direction: 風向 Direction
-        wind_comments: 風コメント Comments
+        wind_speed:	風速 Wind Speed
+        wind_direction: 風向 Wind Direction
+        wind_comments: 風コメント Wind Comments
         precipitation: 降水 Precipitation
-        precipitation_type: 降水の種類 Type
-        precipitation_rate: 降水の強度 Rate
-        precipitation_comments: 降水コメント Comments
-        avalanches: 雪崩などの観察 Avalanches
+        precipitation_type: 降水の種類 Precip. Type
+        precipitation_rate: 降水の強度 Precip. Rate
+        precipitation_comments: 降水コメント Precip. Comments
+        avalanches: 雪崩などの観察 Avalanche Observations
         avalanche_occurred: 雪崩発生有無 Avalanche Activities_Yes or No
         snowpack: 積雪構造 Snowpack
         spin_url: SPIN有無 SPIN_Yes or NO
