@@ -56,7 +56,7 @@
         %td
           = t('activerecord.attributes.observation.spin_no')
         %td
-          = link_to_if(observation.spin_no.present?, 'Yes', observation.spin_urls, target: '_blank'){}
+          = spin_urls(observation.spin_nos)
       %tr
         %td
           = t('activerecord.attributes.observation.comments')
