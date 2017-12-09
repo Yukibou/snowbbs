@@ -1,8 +1,10 @@
 class AvalancheInfomationsController < ApplicationController
   before_action :set_avalanche_infomation, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_avalanche_infomation, only: [:index, :new, :create]
+  after_action :verify_authorized
 
   def index
-    @avalanche_infomations = AvalancheInfomation.all
+    @avalanche_infomations = policy_scope(AvalancheInfomation).order(announced_at: :desc)
   end
 
   def show
@@ -53,6 +55,11 @@ class AvalancheInfomationsController < ApplicationController
   private
   def set_avalanche_infomation
     @avalanche_infomation = AvalancheInfomation.find(params[:id])
+    authorize @avalanche_infomation
+  end
+
+  def authorize_avalanche_infomation
+    authorize policy_scope(AvalancheInfomation)
   end
 
   def avalanche_infomation_params
