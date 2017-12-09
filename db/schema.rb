@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171209123720) do
+ActiveRecord::Schema.define(version: 20171209135507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,19 @@ ActiveRecord::Schema.define(version: 20171209123720) do
     t.integer  "user_id"
     t.index ["area_id"], name: "index_avalanche_infomations_on_area_id", using: :btree
     t.index ["user_id"], name: "index_avalanche_infomations_on_user_id", using: :btree
+  end
+
+  create_table "avalanche_problems", force: :cascade do |t|
+    t.string   "avalanche_type"
+    t.string   "zone"
+    t.string   "direction"
+    t.string   "triggering"
+    t.string   "size"
+    t.string   "comments"
+    t.integer  "avalanche_infomation_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["avalanche_infomation_id"], name: "index_avalanche_problems_on_avalanche_infomation_id", using: :btree
   end
 
   create_table "danger_ratings", force: :cascade do |t|

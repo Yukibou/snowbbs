@@ -1,0 +1,14 @@
+.nested-fields
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        留意すべき雪崩 Avalanche Problem
+    .panel-body
+      .form-inputs
+        = f.input :avalanche_type
+        = f.input :zone
+        = f.input :size
+        = f.input :direction
+        = f.input :triggering
+        = f.input :comments
+      = link_to_remove_association "この雪崩の削除", f, class: 'btn btn-danger'

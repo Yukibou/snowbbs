@@ -72,6 +72,9 @@
           = t('activerecord.attributes.avalanche_infomation.below_treeline_comments')
         %td
           = @avalanche_infomation.below_treeline_comments
+
+= render 'avalanche_problem', avalanche_infomation: @avalanche_infomation
+
 .panel.panel-info
   .panel-heading
     %h3.panel-title

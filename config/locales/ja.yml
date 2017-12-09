@@ -16,7 +16,15 @@ ja:
       danger_rating: 雪崩危険度
       area: エリア
       avalanche_infomation: 雪崩情報
+      avalanche_problem: 留意すべき雪崩
     attributes:
+      avalanche_problem: &avalanche_problem
+        avalanche_type: 雪崩種別 Avalanche Type
+        size: サイズ Size
+        zone: 標高帯 Zone
+        direction: 斜面方位 Direction
+        triggering: 誘発の可能性 Likelihood of Triggering
+        comments: コメント Comments
       avalanche_infomation:
         announced_at: 発表日時 Announced At
         area: エリア Range
@@ -36,6 +44,7 @@ ja:
         snowpack: 積雪 Snowpack
         weather: 天候 Weather
         travel_advisory: 助言 Travel Advisory
+      avalanche_infomation/avalanche_problem: *avalanche_problem
       danger_rating: &danger_rating
         alpine_zone: アルパイン危険度 Alpine
         alpine_comments: アルパイン コメント Alpine Comments
@@ -192,6 +201,36 @@ ja:
         good: Good
         fair: Fair
         low: Low
+    avalanche_problem:
+      type:
+        dry_loose_snow: Dry Loose snow
+        storm_slab: Storm slab
+        wind_slab: Wind slab
+        persistent_slab: Persistent slab
+        deep_persistent_slab: Deep Persistent slab
+        glide_slab: Glide slab
+        wet_loose_snow: Wet Loose snow
+        wet_slab: Wet slab
+      triggering:
+        certain: 確実 Certain
+        very_likely: とても可能性が高い Very Likely
+        likely: 可能性が高い Likely
+        possible: ありうる Possible
+        unlikely: 可能性が低い Unlikely
+      zone:
+        alpine: アルパイン Alpine
+        treeline: 森林限界 Treeline
+        below_treeline: 森林帯 Below Treeline
+      direction:
+        n: N
+        ne: NE
+        e: E
+        se: SE
+        s: S
+        sw: SW
+        w: W
+        nw: NW
+        vrb: VRB
     avalanche_infomation:
       alpine_zone:
         extreme: 5 極めて高い（Extreme）

@@ -2,6 +2,8 @@ class AvalancheInfomation < ApplicationRecord
   extend Enumerize
   belongs_to :area
   belongs_to :user
+  has_many :avalanche_problems, dependent: :delete_all, inverse_of: :avalanche_infomation
+  accepts_nested_attributes_for :avalanche_problems
 
   enumerize :alpine_zone, in: [:extreme, :high, :considerable, :moderate, :low, :no_rating]
   enumerize :treeline_zone, in: [:extreme, :high, :considerable, :moderate, :low, :no_rating]

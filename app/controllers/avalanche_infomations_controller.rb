@@ -10,6 +10,7 @@ class AvalancheInfomationsController < ApplicationController
 
   def new
     @avalanche_infomation = current_user.avalanche_infomations.new
+    @avalanche_infomation.avalanche_problems.build
   end
 
   def edit
@@ -73,7 +74,8 @@ class AvalancheInfomationsController < ApplicationController
         :avalanche,
         :snowpack,
         :weather,
-        :travel_advisory
+        :travel_advisory,
+        avalanche_problems_attributes: AvalancheProblem::REGISTRABLE_ATTRIBUTES
         )
   end
 end
