@@ -1,9 +1,50 @@
-= simple_form_for(@avalanche_infomation) do |f|
+= simple_form_for(@avalanche_infomation, wrapper: :horizontal_form, html: { class: 'form-horizontal' }) do |f|
   = f.error_notification
 
   .form-inputs
-    = f.input :announced_at
-    = f.input :alpine_zone
-
+    = f.input :announced_at, wrapper: :horizontal_select_date, as: :date
+    = f.association :area, collection: Area.sort_order
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        alpine zone
+    .panel-body
+      .form-inputs
+        = f.input :alpine_zone
+        = f.input :alpine_trend
+        = f.input :alpine_confidence
+        = f.input :alpine_comments, as: :text
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        treeline zone
+    .panel-body
+      .form-inputs
+        = f.input :treeline_zone
+        = f.input :treeline_trend
+        = f.input :treeline_confidence
+        = f.input :treeline_comments, as: :text
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        below treeline zone
+    .panel-body
+      .form-inputs
+        = f.input :below_treeline_zone
+        = f.input :below_treeline_trend
+        = f.input :below_treeline_confidence
+        = f.input :below_treeline_comments, as: :text
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        comments
+    .panel-body
+      .form-inputs
+        = f.input :avalanche, as: :text
+        = f.input :snowpack, as: :text
+        = f.input :weather, as: :text
+        = f.input :travel_advisory, as: :text
   .form-actions
     = f.button :submit
+
+

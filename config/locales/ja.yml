@@ -15,7 +15,27 @@ ja:
       user: ユーザー
       danger_rating: 雪崩危険度
       area: エリア
+      avalanche_infomation: 雪崩情報
     attributes:
+      avalanche_infomation:
+        announced_at: 発表日時 Announced At
+        area: エリア Range
+        alpine_zone: アルパイン危険度 Alpine Rating
+        alpine_trend: アルパイン傾向 Alpine Trend
+        alpine_comments: アルパイン コメント Alpine Comments
+        alpine_confidence: アルパイン 信頼度 Alpine Confidence
+        treeline_zone: 森林限界危険度 Treeline Rationg
+        treeline_trend: 森林限界傾向 Treeline Trend
+        treeline_comments: 森林限界 コメント Treeline Comments
+        treeline_confidence: 森林限界 信頼度 Treeline Confidence
+        below_treeline_zone: 森林帯危険度 Below Treeline Raitng
+        below_treeline_trend: 森林帯傾向 Below Treeline Trend
+        below_treeline_comments: 森林帯 コメント Below Treeline Comments
+        below_treeline_confidence: 森林帯 信頼度 Below Treeline Confidence
+        avalanche: 雪崩 Avalanche
+        snowpack: 積雪 Snowpack
+        weather: 天候 Weather
+        travel_advisory: 助言 Travel Advisory
       danger_rating: &danger_rating
         alpine_zone: アルパイン危険度 Alpine
         alpine_comments: アルパイン コメント Alpine Comments
@@ -172,7 +192,40 @@ ja:
         good: Good
         fair: Fair
         low: Low
-
+    avalanche_infomation:
+      alpine_zone:
+        extreme: 5 極めて高い（Extreme）
+        high: 4 高い（High）
+        considerable: 3 警戒（Considerable）
+        moderate: 2 留意（Moderate）
+        low: 1 低い（Low）
+        no_rating: 評価なし（No Rating）
+      treeline_zone:
+        extreme: 5 極めて高い（Extreme）
+        high: 4 高い（High）
+        considerable: 3 警戒（Considerable）
+        moderate: 2 留意（Moderate）
+        low: 1 低い（Low）
+        no_rating: 評価なし（No Rating）
+      below_treeline_zone:
+        extreme: 5 極めて高い（Extreme）
+        high: 4 高い（High）
+        considerable: 3 警戒（Considerable）
+        moderate: 2 留意（Moderate）
+        low: 1 低い（Low）
+        no_rating: 評価なし（No Rating）
+      alpine_trend:
+        up: 上昇（up）
+        keep: 不変（keep）
+        low: 下降（low）
+      treeline_trend:
+        up: 上昇（up）
+        keep: 不変（keep）
+        low: 下降（low）
+      below_treeline_trend:
+        up: 上昇（up）
+        keep: 不変（keep）
+        low: 下降（low）
   date:
     abbr_day_names:
     - 日
