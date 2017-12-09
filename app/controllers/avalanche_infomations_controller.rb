@@ -4,7 +4,7 @@ class AvalancheInfomationsController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @avalanche_infomations = policy_scope(AvalancheInfomation).order(announced_at: :desc)
+    @avalanche_infomations = policy_scope(AvalancheInfomation).sort_order
   end
 
   def show

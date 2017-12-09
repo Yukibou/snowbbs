@@ -50,6 +50,11 @@
           = t('activerecord.attributes.observation.co_worker')
         %td
           = @observation.co_worker
+      %tr
+        %td
+          = t('activerecord.attributes.observation.avalanche_infomation')
+        %td
+          = link_to_if(@observation.avalanche_infomation.present?, fa_icon('external-link', text: '雪崩情報'), @observation.avalanche_infomation, target: '_blank'){}
 = render 'observation_detail', observation: @observation
 - unless policy(@observation).public_user?
   = render 'evaluation', observation: @observation

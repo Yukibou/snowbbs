@@ -12,6 +12,7 @@
         = f.input :mountain
         = f.input :location
         = f.input :co_worker
+        = f.association :avalanche_infomation, label_method: :title_name, value_method: :id, prompt: '参照する雪崩情報を選択'
   .panel.panel-info
     .panel-heading
       %h3.panel-title

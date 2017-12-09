@@ -67,6 +67,7 @@ class ObservationsController < ApplicationController
     params.require(:observation).permit(
         :observation_at,
         :area_id,
+        :avalanche_infomation_id,
         :mountain,
         :location,
         :co_worker,
