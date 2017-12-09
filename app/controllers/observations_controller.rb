@@ -4,7 +4,6 @@ class ObservationsController < ApplicationController
   after_action :verify_authorized
 
   def index
-    # @observations = Observation.all
     @observations = policy_scope(Observation).order(observation_at: :desc)
   end
 
@@ -55,18 +54,15 @@ class ObservationsController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
   def set_observation
     @observation = Observation.find(params[:id])
     authorize @observation
   end
 
   def authorize_observation
-    # authorize Observation
     authorize policy_scope(Observation)
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def observation_params
     params.require(:observation).permit(
         :observation_at,
