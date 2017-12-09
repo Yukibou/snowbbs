@@ -1,23 +1,20 @@
-%h1 Listing avalanche_infomations
-
-%table
+= link_to fa_icon('plus-circle', text: t('link.New')), new_avalanche_infomation_path, class: 'btn btn-default'
+%table.table.table-striped
   %thead
     %tr
-      %th Announced at
-      %th Alpine zone
+      %th= t('activerecord.attributes.avalanche_infomation.announced_at')
+      %th= t('activerecord.attributes.avalanche_infomation.area')
+      %th= t('activerecord.attributes.avalanche_infomation.user')
       %th
       %th
       %th
-
   %tbody
     - @avalanche_infomations.each do |avalanche_infomation|
       %tr
-        %td= avalanche_infomation.announced_at
-        %td= avalanche_infomation.alpine_zone
+        %td= avalanche_infomation.announced_at.strftime("%y%m%d")
+        %td= avalanche_infomation.area.name
+        %td= avalanche_infomation.user.name
         %td= link_to 'Show', avalanche_infomation
         %td= link_to 'Edit', edit_avalanche_infomation_path(avalanche_infomation)
         %td= link_to 'Destroy', avalanche_infomation, method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
-
-= link_to 'New Avalanche infomation', new_avalanche_infomation_path
