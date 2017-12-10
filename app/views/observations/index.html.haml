@@ -1,18 +1,18 @@
 - if policy(@observations).new?
   = link_to fa_icon('plus-circle', text: t('link.New')), new_observation_path, class: 'btn btn-default'
 
-= search_form_for(@search, html: {class: 'form-inline'}) do |f|
-  = f.label :user
-  = f.text_field :user_name_cont, size: '12'
+  = search_form_for(@search, html: {class: 'form-inline'}) do |f|
+    = f.label :user
+    = f.text_field :user_name_cont, size: '12'
 
-  = f.label :area
-  = f.select :area_id_eq, options_from_collection_for_select(Area.all, "id", "name", @search.area_id_eq), :include_blank => true
+    = f.label :area
+    = f.select :area_id_eq, options_from_collection_for_select(Area.all, "id", "name", @search.area_id_eq), :include_blank => true
 
-  = f.label :observation_at
-  = f.date_select :observation_at_gteq, {include_blank: true, start_year: 2015}
-  〜
-  = f.date_select :observation_at_lteq_end_of_day, {include_blank: true, start_year: 2015}
-  = f.submit '検索', class: 'btn btn-info btn-sm'
+    = f.label :observation_at
+    = f.date_select :observation_at_gteq, {include_blank: true, start_year: 2015}
+    〜
+    = f.date_select :observation_at_lteq_end_of_day, {include_blank: true, start_year: 2015}
+    = f.submit '検索', class: 'btn btn-info btn-sm'
 
 %table.table.table-striped
   %thead
