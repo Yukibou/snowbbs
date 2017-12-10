@@ -151,6 +151,17 @@ ja:
         rs: RS みぞれ
         g: G あられ
         zr: ZR 凍雨
+      precipitation_rate:
+        S-1: S-1
+        S1: 'S1'
+        S2: 'S2'
+        S3: 'S3'
+        S5: 'S5'
+        S10: 'S10'
+        RV: 'RV'
+        RL: 'RL'
+        RM: 'RM'
+        RH: 'RH'
     evaluation:
       problem:
         dry_loose_snow: Dry Loose snow

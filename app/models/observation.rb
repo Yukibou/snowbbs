@@ -19,6 +19,8 @@ class Observation < ApplicationRecord
   enumerize :wind_speed, in: [:c, :l, :m, :s, :x]
   enumerize :wind_direction, in: [:n, :ne, :e, :se, :s, :sw, :w, :nw, :vrb]
   enumerize :precipitation_type, in: [:nil, :r, :s, :rs, :g, :zr]
+  enumerize :precipitation_rate, in: ['S-1', 'S1', 'S2', 'S3', 'S5', 'S10', 'RV', 'RL', 'RM', 'RH']
+
 
   REGISTRABLE_ATTRIBUTES = %i(publish observation_at area_id mountain location elevation_low elevation_low_comments elevation_high elevation_high_comments temperature sky sky_comments wind_speed wind_direction wind_comments precipitation_type precipitation_rate precipitation_comments avalanches avalanche_occurred snowpack spin_nos comments movie_url)
 end
