@@ -30,6 +30,7 @@ gem 'carrierwave'
 gem 'rmagick', require: 'rmagick'
 gem 'fog'
 gem 'font-awesome-rails'
+gem 'ransack'
 
 group :development do
   gem 'byebug', platform: :mri

@@ -4,7 +4,11 @@ class ObservationsController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @observations = policy_scope(Observation).order(observation_at: :desc)
+    # 検索オブジェクト
+    @search = Observation.ransack(params[:q])
+    # 検索結果
+    @observations = @search.result
+    @observations = policy_scope(@observations).order(observation_at: :desc)
   end
 
   def show
