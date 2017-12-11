@@ -2,7 +2,7 @@
 .panel.panel-info
   .panel-heading
     .panel-title
-      - announced_date = @avalanche_infomation.announced_at.strftime("%y%m%d")
+      - announced_date = @avalanche_infomation.announced_at.strftime("%y%m%d %H:%M")
       = "#{announced_date} #{@avalanche_infomation.area_name}"
 .panel.panel-info
   .panel-heading

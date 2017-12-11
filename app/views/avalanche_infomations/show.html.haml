@@ -2,7 +2,7 @@
 .panel.panel-info
   .panel-heading
     .panel-title
-      - announced_date = @avalanche_infomation.announced_at.strftime("%y%m%d")
+      - announced_date = @avalanche_infomation.announced_at.strftime("%y%m%d %H:%M")
       = "#{announced_date} #{@avalanche_infomation.area_name}"
 .panel.panel-info
   .panel-heading
@@ -106,16 +106,3 @@
       %tr
         %td
           = @avalanche_infomation.travel_advisory
-
-
-
-
-
-
-
-
-
-
-= link_to 'Edit', edit_avalanche_infomation_path(@avalanche_infomation)
-\|
-= link_to 'Back', avalanche_infomations_path

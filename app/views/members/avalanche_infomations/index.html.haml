@@ -12,7 +12,7 @@
   %tbody
     - @avalanche_infomations.each do |avalanche_infomation|
       %tr
-        %td= link_to avalanche_infomation.announced_at.strftime("%y%m%d"), [:members, avalanche_infomation]
+        %td= link_to avalanche_infomation.announced_at.strftime("%y%m%d %H:%M"), [:members, avalanche_infomation]
         %td= avalanche_infomation.area_name
         %td= avalanche_infomation.user.name
         %td= link_to_if(policy(avalanche_infomation).update?, t('link.Edit'), edit_members_avalanche_infomation_path(avalanche_infomation), class: 'btn btn-xs btn-info'){}
