@@ -1,0 +1,69 @@
+.panel.panel-info
+  .panel-heading
+    %h3.panel-title
+      観察データ Observation data
+  .panel-body
+    %table.table.table-bordered.table-striped
+      %tr
+        %td.td-nowrap
+          = t('activerecord.attributes.observation.elevation')
+        %td
+          = "#{observation.elevation_low}m〜#{observation.elevation_high}m"
+      %tr
+        %td.td-nowrap
+          = t('activerecord.attributes.observation.temperature')
+        %td
+          = "#{temp_with_comments(observation.temperature_low, observation.temperature_low_hrs, observation.temperature_low_elevation) } 〜 #{temp_with_comments(observation.temperature_high, observation.temperature_high_hrs, observation.temperature_high_elevation)}"
+      %tr
+        %td
+          = t('activerecord.attributes.observation.sky')
+        %td
+          = with_comments(observation.sky_text, observation.sky_comments)
+      %tr
+        %td
+          = t('activerecord.attributes.observation.wind')
+        %td
+          = with_label(t('activerecord.attributes.observation.wind_speed'), observation.wind_speed_text)
+          %br
+          = with_label(t('activerecord.attributes.observation.wind_direction'), observation.wind_direction_text)
+          %br
+          = with_label(t('activerecord.attributes.observation.wind_comments'), observation.wind_comments)
+      %tr
+        %td
+          = t('activerecord.attributes.observation.precipitation')
+        %td
+          = with_label(t('activerecord.attributes.observation.precipitation_type'), observation.precipitation_type_text)
+          %br
+          = with_label(t('activerecord.attributes.observation.precipitation_rate'), observation.precipitation_rate)
+          %br
+          = with_label(t('activerecord.attributes.observation.precipitation_comments'), observation.precipitation_comments)
+      %tr
+        %td
+          = t('activerecord.attributes.observation.avalanches')
+        %td
+          = observation.avalanches
+      %tr
+        %td
+          = t('activerecord.attributes.observation.avalanche_occurred')
+        %td
+          = to_yes_no(observation.avalanche_occurred)
+      %tr
+        %td
+          = t('activerecord.attributes.observation.snowpack')
+        %td
+          = observation.snowpack
+      %tr
+        %td
+          = t('activerecord.attributes.observation.spin_no')
+        %td
+          = spin_urls(observation.spin_nos)
+      %tr
+        %td
+          = t('activerecord.attributes.observation.comments')
+        %td
+          = observation.comments
+      %tr
+        %td
+          = t('activerecord.attributes.observation.movie_url')
+        %td
+          = link_to_if(observation.movie_url.present?, '動画あり', observation.movie_url, target: '_blank'){}

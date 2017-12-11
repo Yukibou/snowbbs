@@ -1,4 +1,4 @@
-class AreasController < ApplicationController
+class Members::AreasController < Members::ApplicationController
   before_action :authenticate_user!
   before_action :set_area, only: [:show, :edit, :update, :destroy]
   after_action :verify_authorized

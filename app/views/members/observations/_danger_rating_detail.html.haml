@@ -1,0 +1,54 @@
+- danger_rating = observation.danger_rating
+.panel.panel-info
+  .panel-heading
+    %h3.panel-title
+      雪崩危険度 Danger Rating
+  .panel-body
+    %table.table.table-bordered.table-striped
+      %tr
+        %td
+          = t('activerecord.attributes.danger_rating.alpine_zone')
+        %td
+          = danger_rating.alpine_zone_text
+      %tr
+        %td
+          = t('activerecord.attributes.danger_rating.alpine_comments')
+        %td
+          = danger_rating.alpine_comments
+      %tr
+        %td
+          = t('activerecord.attributes.danger_rating.alpine_confidence')
+        %td
+          = danger_rating.alpine_confidence_text
+
+      %tr
+        %td
+          = t('activerecord.attributes.danger_rating.treeline_zone')
+        %td
+          = danger_rating.treeline_zone_text
+      %tr
+        %td
+          = t('activerecord.attributes.danger_rating.treeline_comments')
+        %td
+          = danger_rating.treeline_comments
+      %tr
+        %td
+          = t('activerecord.attributes.danger_rating.treeline_confidence')
+        %td
+          = danger_rating.treeline_confidence_text
+
+      %tr
+        %td
+          = t('activerecord.attributes.danger_rating.below_treeline_zone')
+        %td
+          = danger_rating.below_treeline_zone_text
+      %tr
+        %td
+          = t('activerecord.attributes.danger_rating.below_treeline_comments')
+        %td
+          = danger_rating.below_treeline_comments
+      %tr
+        %td
+          = t('activerecord.attributes.danger_rating.below_treeline_confidence')
+        %td
+          = danger_rating.below_treeline_confidence_text

@@ -1,0 +1,95 @@
+= simple_form_for(@observation, wrapper: :horizontal_form, html: { class: 'form-horizontal' }) do |f|
+  = f.error_notification
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        日付と場所 Date & Location
+    .panel-body
+      .form-inputs
+        = f.input :publish, wrapper: :horizontal_radio_and_checkboxes
+        = f.input :observation_at, wrapper: :horizontal_select_date, as: :date
+        = f.association :area, collection: Area.sort_order
+        = f.input :mountain
+        = f.input :location
+        = f.input :co_worker
+        = f.association :avalanche_infomation, label_method: :title_name, value_method: :id, prompt: '参照する雪崩情報を選択'
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        観察データ Observation data
+    .panel-body
+      .form-inputs
+        = f.input :elevation_low
+        = f.input :elevation_high
+      .row
+        .col-sm-3.control-label
+          = f.label :temperature_low
+        .col-sm-3
+          = f.input :temperature_low, label: false, placeholder: 'temp.'
+        .col-sm-3
+          = f.input :temperature_low_hrs, label: false, wrapper: :horizontal_input_group do
+            = f.input_field :temperature_low_hrs, class: 'form-control'
+            %span.input-group-addon
+              hrs
+        .col-sm-3
+          = f.input :temperature_low_elevation, label: false, wrapper: :horizontal_input_group do
+            = f.input_field :temperature_low_elevation, class: 'form-control'
+            %span.input-group-addon
+              m
+      .row
+        .col-sm-3.control-label
+          = f.label :temperature_high
+        .col-sm-3
+          = f.input :temperature_high, label: false, placeholder: 'temp.'
+        .col-sm-3
+          = f.input :temperature_high_hrs, label: false, wrapper: :horizontal_input_group do
+            = f.input_field :temperature_high_hrs, class: 'form-control'
+            %span.input-group-addon
+              hrs
+        .col-sm-3
+          = f.input :temperature_high_elevation, label: false, wrapper: :horizontal_input_group do
+            = f.input_field :temperature_high_elevation, class: 'form-control'
+            %span.input-group-addon
+              m
+      .form-inputs
+        = f.input :sky
+        = f.input :sky_comments, as: :text
+        = f.input :wind_speed
+        = f.input :wind_direction
+        = f.input :wind_comments, as: :text
+        = f.input :precipitation_type
+        = f.input :precipitation_rate
+        = f.input :precipitation_comments, as: :text
+        = f.input :avalanches, as: :text, input_html: {rows: 5}
+        = f.input :avalanche_occurred, wrapper: :horizontal_radio_and_checkboxes, inline_label: '発生あり'
+        = f.input :snowpack, as: :text, input_html: {rows: 5}
+        = f.input :spin_nos, placeholder: 'SPINのNO、複数の場合はカンマで区切る'
+        = f.input :comments, as: :text, input_html: {rows: 5}
+        .row
+          - f.object.images.each do |image|
+            .col-sm-4.observation-image
+              = image_tag image.thumb
+        = f.input :images, as: :file, input_html: { multiple: true }, wrapper: :horizontal_file_input
+        = f.input :movie_url, placeholder: '動画がある場合はURLを、ない場合は空白のままとしてください。'
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        評価 Evaluation
+    .panel-body
+      #evaluations
+        = f.simple_fields_for :evaluations do |ef|
+          = render 'evaluation_fields', f: ef
+        .links
+          = link_to_add_association 'ハザード評価の追加', f, :evaluations, class: 'btn btn-info'
+      .field.margin-top-10
+        = f.simple_fields_for :danger_rating do |df|
+          = render 'danger_rating_fields', f: df
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title
+        総括 Summary
+    .panel-body
+      .form-inputs
+        = f.input :general_comments, as: :text, input_html: {rows: 5}
+  .form-actions
+    = f.button :submit, class: 'btn btn-primary'

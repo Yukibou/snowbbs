@@ -8,13 +8,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     = csrf_meta_tags
   %body
-    -#%header
-    -#  = render 'layouts/navigation'
-    .panel.panel-default
-      .panel-body
-        %h3
-          雪の掲示板
-          %small snow bulletin board
+    %header
+      = render 'layouts/members/navigation'
     %main{:role => "main"}
-      = render 'layouts/messages'
+      = render 'layouts/members/messages'
       = yield
