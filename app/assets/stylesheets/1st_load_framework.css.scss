@@ -45,6 +45,18 @@ main {
   width: 100%;
   margin-top: 51px; // accommodate the navbar
   }
+.for-iframe {
+  margin-top: 0px;
+}
+.for-iframe-title {
+  margin: 0px;
+  padding: 5px;
+  background-color: #c486b8;
+  color: #F7F7F7;
+}
+.font-white {
+  color :#F7F7F7;
+}
 section {
   @extend .row;
   margin-top: 20px;

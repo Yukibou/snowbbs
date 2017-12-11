@@ -12,9 +12,9 @@
     -#  = render 'layouts/navigation'
     .panel.panel-default
       .panel-body
-        %h3
+        %h3.for-iframe-title
           雪の掲示板
-          %small snow bulletin board
-    %main{:role => "main"}
+          %small.font-white snow bulletin board
+    %main.for-iframe{:role => "main"}
       = render 'layouts/messages'
       = yield
