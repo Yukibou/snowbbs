@@ -281,15 +281,15 @@ ja:
         no_rating: 評価なし（No Rating）
       alpine_trend:
         up: 上昇（up）
-        keep: 不変（keep）
+        stay: 不変（stay）
         low: 下降（low）
       treeline_trend:
         up: 上昇（up）
-        keep: 不変（keep）
+        stay: 不変（stay）
         low: 下降（low）
       below_treeline_trend:
         up: 上昇（up）
-        keep: 不変（keep）
+        stay: 不変（stay）
         low: 下降（low）
   date:
     abbr_day_names:

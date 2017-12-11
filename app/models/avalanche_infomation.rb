@@ -11,9 +11,9 @@ class AvalancheInfomation < ApplicationRecord
   enumerize :alpine_confidence, in: [:good, :fair, :low]
   enumerize :treeline_confidence, in: [:good, :fair, :low]
   enumerize :below_treeline_confidence, in: [:good, :fair, :low]
-  enumerize :alpine_trend, in: [:up, :keep, :low]
-  enumerize :treeline_trend, in: [:up, :keep, :low]
-  enumerize :below_treeline_trend, in: [:up, :keep, :low]
+  enumerize :alpine_trend, in: [:up, :stay, :low]
+  enumerize :treeline_trend, in: [:up, :stay, :low]
+  enumerize :below_treeline_trend, in: [:up, :stay, :low]
   enumerize :area_name, in: ['白馬','神楽谷川武尊','妙高','立山']
 
   REGISTRABLE_ATTRIBUTES = %i(id alpine_zone treeline_zone below_treeline_zone alpine_comments treeline_comments below_treeline_comments alpine_confidence treeline_confidence below_treeline_confidence)
