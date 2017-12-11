@@ -22,7 +22,7 @@ ja:
         avalanche_type: 雪崩種別 Avalanche Type
         size: サイズ Size
         zone: 標高帯 Zone
-        direction: 斜面方位 Direction
+        slope_aspect: 斜面方位 Slope Aspect
         triggering: 誘発の可能性 Likelihood of Triggering
         comments: コメント Comments
       avalanche_infomation:
@@ -247,7 +247,7 @@ ja:
         alpine: アルパイン Alpine
         treeline: 森林限界 Treeline
         below_treeline: 森林帯 Below Treeline
-      direction:
+      slope_aspect:
         n: N
         ne: NE
         e: E

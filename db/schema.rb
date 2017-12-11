@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211140705) do
+ActiveRecord::Schema.define(version: 20171211141537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20171211140705) do
   create_table "avalanche_problems", force: :cascade do |t|
     t.string   "avalanche_type"
     t.string   "zone"
-    t.string   "direction"
+    t.string   "slope_aspect"
     t.string   "triggering"
     t.string   "size"
     t.string   "comments"
