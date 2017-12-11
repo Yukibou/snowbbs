@@ -18,5 +18,5 @@
         %td= user.name
         %td= user.email
         %td= user.role
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } unless user == current_user
+        %td= link_to 'Edit', edit_members_user_path(user)
+        %td= link_to 'Destroy', [:members, user], method: :delete, data: { confirm: 'Are you sure?' } unless user == current_user
