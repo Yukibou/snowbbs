@@ -13,8 +13,10 @@
     .panel.panel-default
       .panel-body
         %h3.for-iframe-title
-          雪の掲示板
-          %small.font-white snow bulletin board
+          = link_to observations_path do
+            .for-iframe-title
+              雪の掲示板
+              %small.font-white snow bulletin board
     %main.for-iframe{:role => "main"}
       = render 'layouts/messages'
       = yield
