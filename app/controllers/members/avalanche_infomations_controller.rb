@@ -23,11 +23,9 @@ class Members::AvalancheInfomationsController < Members::ApplicationController
 
     respond_to do |format|
       if @avalanche_infomation.save
-        format.html {redirect_to @avalanche_infomation, notice: 'Avalanche infomation was successfully created.'}
-        format.json {render :show, status: :created, location: @avalanche_infomation}
+        format.html {redirect_to [:members, @avalanche_infomation], notice: 'Avalanche infomation was successfully created.'}
       else
         format.html {render :new}
-        format.json {render json: @avalanche_infomation.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -35,11 +33,9 @@ class Members::AvalancheInfomationsController < Members::ApplicationController
   def update
     respond_to do |format|
       if @avalanche_infomation.update(avalanche_infomation_params)
-        format.html {redirect_to @avalanche_infomation, notice: 'Avalanche infomation was successfully updated.'}
-        format.json {render :show, status: :ok, location: @avalanche_infomation}
+        format.html {redirect_to [:members, @avalanche_infomation], notice: 'Avalanche infomation was successfully updated.'}
       else
         format.html {render :edit}
-        format.json {render json: @avalanche_infomation.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -47,7 +43,7 @@ class Members::AvalancheInfomationsController < Members::ApplicationController
   def destroy
     @avalanche_infomation.destroy
     respond_to do |format|
-      format.html {redirect_to avalanche_infomations_url, notice: 'Avalanche infomation was successfully destroyed.'}
+      format.html {redirect_to members_avalanche_infomations_url, notice: 'Avalanche infomation was successfully destroyed.'}
       format.json {head :no_content}
     end
   end

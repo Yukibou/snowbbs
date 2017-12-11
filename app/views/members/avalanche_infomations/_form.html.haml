@@ -1,4 +1,4 @@
-= simple_form_for(@avalanche_infomation, wrapper: :horizontal_form, html: { class: 'form-horizontal' }) do |f|
+= simple_form_for([:members, @avalanche_infomation], wrapper: :horizontal_form, html: { class: 'form-horizontal' }) do |f|
   = f.error_notification
 
   .form-inputs

@@ -12,9 +12,9 @@
   %tbody
     - @avalanche_infomations.each do |avalanche_infomation|
       %tr
-        %td= link_to avalanche_infomation.announced_at.strftime("%y%m%d"), avalanche_infomation
+        %td= link_to avalanche_infomation.announced_at.strftime("%y%m%d"), [:members, avalanche_infomation]
         %td= avalanche_infomation.area.name
         %td= avalanche_infomation.user.name
-        %td= link_to_if(policy(avalanche_infomation).update?, t('link.Edit'), edit_avalanche_infomation_path(avalanche_infomation), class: 'btn btn-xs btn-info'){}
-        %td= link_to_if(policy(avalanche_infomation).destroy?, t('link.Destroy'), avalanche_infomation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger'){}
+        %td= link_to_if(policy(avalanche_infomation).update?, t('link.Edit'), edit_members_avalanche_infomation_path(avalanche_infomation), class: 'btn btn-xs btn-info'){}
+        %td= link_to_if(policy(avalanche_infomation).destroy?, t('link.Destroy'), [:members, avalanche_infomation], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger'){}
 
