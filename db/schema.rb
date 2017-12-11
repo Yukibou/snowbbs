@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171209155542) do
+ActiveRecord::Schema.define(version: 20171211140705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20171209155542) do
   end
 
   create_table "avalanche_infomations", force: :cascade do |t|
-    t.integer  "area_id"
     t.datetime "announced_at"
     t.string   "avalanche"
     t.string   "snowpack"
@@ -44,7 +43,7 @@ ActiveRecord::Schema.define(version: 20171209155542) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "user_id"
-    t.index ["area_id"], name: "index_avalanche_infomations_on_area_id", using: :btree
+    t.string   "area_name"
     t.index ["user_id"], name: "index_avalanche_infomations_on_user_id", using: :btree
   end
 

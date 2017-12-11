@@ -61,7 +61,7 @@ class Members::AvalancheInfomationsController < Members::ApplicationController
   def avalanche_infomation_params
     params.require(:avalanche_infomation).permit(
         :announced_at,
-        :area_id,
+        :area_name,
         :alpine_zone,
         :alpine_trend,
         :alpine_comments,
