@@ -1,4 +1,4 @@
-= simple_form_for(@observation, wrapper: :horizontal_form, html: { class: 'form-horizontal' }) do |f|
+= simple_form_for([:members, @observation], wrapper: :horizontal_form, html: { class: 'form-horizontal' }) do |f|
   = f.error_notification
   .panel.panel-info
     .panel-heading

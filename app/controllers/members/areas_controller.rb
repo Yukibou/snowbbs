@@ -25,7 +25,7 @@ class Members::AreasController < Members::ApplicationController
 
     respond_to do |format|
       if @area.save
-        format.html {redirect_to @area, notice: 'Area was successfully created.'}
+        format.html {redirect_to [:members, @area], notice: 'Area was successfully created.'}
       else
         format.html {render :new}
       end
@@ -35,7 +35,7 @@ class Members::AreasController < Members::ApplicationController
   def update
     respond_to do |format|
       if @area.update(area_params)
-        format.html {redirect_to @area, notice: 'Area was successfully updated.'}
+        format.html {redirect_to [:members, @area], notice: 'Area was successfully updated.'}
       else
         format.html {render :edit}
       end
@@ -45,7 +45,7 @@ class Members::AreasController < Members::ApplicationController
   def destroy
     @area.destroy
     respond_to do |format|
-      format.html {redirect_to areas_url, notice: 'Area was successfully destroyed.'}
+      format.html {redirect_to members_areas_url, notice: 'Area was successfully destroyed.'}
     end
   end
 

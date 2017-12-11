@@ -14,7 +14,7 @@
       %tr{class: "#{klass}"}
         %td= area.public
         %td= area.name
-        %td= link_to 'Edit', edit_area_path(area)
-        %td= link_to 'Destroy', area, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Edit', edit_members_area_path(area)
+        %td= link_to 'Destroy', [:members, area], method: :delete, data: { confirm: 'Are you sure?' }
 %br
-= link_to 'New Area', new_area_path
+= link_to 'New Area', new_members_area_path
