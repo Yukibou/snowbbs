@@ -6,11 +6,13 @@
         %th= t('activerecord.attributes.observation.publish')
       %th 観測日・エリア
       %th 山岳・場所
-      %th 投稿者
-      %th{:style => "width:48px;"}
-      %th{:style => "width:48px;"}
-      %th{:style => "width:48px;"}
-      %th 投稿日
+      %th.hidden-xs
+        投稿者
+      %th.hidden-xs{:style => "width:48px;"}
+      %th.hidden-xs{:style => "width:48px;"}
+      %th.hidden-xs{:style => "width:48px;"}
+      %th.hidden-xs
+        投稿日
 
   %tbody
     - @observations.each do |observation|
@@ -19,8 +21,13 @@
           %td= to_publish_value(observation.publish)
         %td= link_to "#{observation.observation_at.strftime("%y%m%d")} #{observation.area.name}", observation
         %td= "#{observation.mountain} #{observation.location}"
-        %td= observation.user.name
-        %td= image_tag 'bbs_photo.png', width: '24' if observation.images.present?
-        %td= image_tag 'bbs_spin.png', width: '24' if observation.spin_nos.present?
-        %td= image_tag 'bbs_avalanche.png', width: '24' if observation.avalanche_occurred
-        %td= observation.created_at.strftime("%y%m%d")
+        %td.hidden-xs
+          = observation.user.name
+        %td.hidden-xs
+          = image_tag 'bbs_photo.png', width: '24' if observation.images.present?
+        %td.hidden-xs
+          = image_tag 'bbs_spin.png', width: '24' if observation.spin_nos.present?
+        %td.hidden-xs
+          = image_tag 'bbs_avalanche.png', width: '24' if observation.avalanche_occurred
+        %td.hidden-xs
+          = observation.created_at.strftime("%y%m%d")
