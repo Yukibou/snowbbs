@@ -1,5 +1,5 @@
 - if policy(@observations).new?
-  = link_to fa_icon('plus-circle', text: t('link.New')), new_observation_path, class: 'btn btn-default'
+  = link_to fa_icon('plus-circle', text: t('link.New')), new_members_observation_path, class: 'btn btn-default'
 
   = search_form_for([:members, @search], html: {class: 'form-inline'}) do |f|
     = f.label :user
