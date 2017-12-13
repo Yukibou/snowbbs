@@ -9,17 +9,11 @@
     %h3.panel-title
       雪崩危険度と傾向 Danger Rating
   .panel-body
+    .pull-left
+      = zone_image("alpine", @avalanche_infomation.alpine_zone, @avalanche_infomation.alpine_trend)
+      = zone_image("treeline", @avalanche_infomation.treeline_zone, @avalanche_infomation.treeline_trend.to_s)
+      = zone_image("below_treeline", @avalanche_infomation.below_treeline_zone, @avalanche_infomation.below_treeline_trend.to_s)
     %table.table.table-bordered.table-striped
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.alpine_zone')
-        %td
-          = @avalanche_infomation.alpine_zone_text
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.alpine_trend')
-        %td
-          = @avalanche_infomation.alpine_trend_text
       %tr
         %td
           = t('activerecord.attributes.avalanche_infomation.alpine_confidence')
@@ -30,17 +24,6 @@
           = t('activerecord.attributes.avalanche_infomation.alpine_comments')
         %td
           = @avalanche_infomation.alpine_comments
-    %table.table.table-bordered.table-striped
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.treeline_zone')
-        %td
-          = @avalanche_infomation.treeline_zone_text
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.treeline_trend')
-        %td
-          = @avalanche_infomation.treeline_trend_text
       %tr
         %td
           = t('activerecord.attributes.avalanche_infomation.treeline_confidence')
@@ -51,17 +34,6 @@
           = t('activerecord.attributes.avalanche_infomation.treeline_comments')
         %td
           = @avalanche_infomation.treeline_comments
-    %table.table.table-bordered.table-striped
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.below_treeline_zone')
-        %td
-          = @avalanche_infomation.below_treeline_zone_text
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.below_treeline_trend')
-        %td
-          = @avalanche_infomation.below_treeline_trend_text
       %tr
         %td
           = t('activerecord.attributes.avalanche_infomation.below_treeline_confidence')

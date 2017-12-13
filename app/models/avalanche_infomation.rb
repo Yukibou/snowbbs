@@ -6,15 +6,25 @@ class AvalancheInfomation < ApplicationRecord
   accepts_nested_attributes_for :avalanche_problems
 
   enumerize :alpine_zone, in: [:extreme, :high, :considerable, :moderate, :low, :no_rating]
+  validates :alpine_zone, presence: true
   enumerize :treeline_zone, in: [:extreme, :high, :considerable, :moderate, :low, :no_rating]
+  validates :treeline_zone, presence: true
   enumerize :below_treeline_zone, in: [:extreme, :high, :considerable, :moderate, :low, :no_rating]
+  validates :below_treeline_zone, presence: true
   enumerize :alpine_confidence, in: [:good, :fair, :low]
+  validates :alpine_confidence, presence: true
   enumerize :treeline_confidence, in: [:good, :fair, :low]
+  validates :treeline_confidence, presence: true
   enumerize :below_treeline_confidence, in: [:good, :fair, :low]
+  validates :below_treeline_confidence, presence: true
   enumerize :alpine_trend, in: [:up, :stay, :low]
+  validates :alpine_trend, presence: true
   enumerize :treeline_trend, in: [:up, :stay, :low]
+  validates :treeline_trend, presence: true
   enumerize :below_treeline_trend, in: [:up, :stay, :low]
+  validates :below_treeline_trend, presence: true
   enumerize :area_name, in: ['白馬','神楽谷川武尊','妙高','立山']
+  validates :area_name, presence: true
 
   REGISTRABLE_ATTRIBUTES = %i(id alpine_zone treeline_zone below_treeline_zone alpine_comments treeline_comments below_treeline_comments alpine_confidence treeline_confidence below_treeline_confidence)
 
