@@ -17,11 +17,11 @@ class AvalancheInfomation < ApplicationRecord
   validates :treeline_confidence, presence: true
   enumerize :below_treeline_confidence, in: [:good, :fair, :low]
   validates :below_treeline_confidence, presence: true
-  enumerize :alpine_trend, in: [:up, :stay, :low]
+  enumerize :alpine_trend, in: [:up, :stay, :down]
   validates :alpine_trend, presence: true
-  enumerize :treeline_trend, in: [:up, :stay, :low]
+  enumerize :treeline_trend, in: [:up, :stay, :down]
   validates :treeline_trend, presence: true
-  enumerize :below_treeline_trend, in: [:up, :stay, :low]
+  enumerize :below_treeline_trend, in: [:up, :stay, :down]
   validates :below_treeline_trend, presence: true
   enumerize :area_name, in: ['白馬','神楽谷川武尊','妙高','立山']
   validates :area_name, presence: true

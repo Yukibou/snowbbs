@@ -282,15 +282,15 @@ ja:
       alpine_trend:
         up: 上昇（up）
         stay: 不変（stay）
-        low: 下降（low）
+        down: 下降（down）
       treeline_trend:
         up: 上昇（up）
         stay: 不変（stay）
-        low: 下降（low）
+        down: 下降（down）
       below_treeline_trend:
         up: 上昇（up）
         stay: 不変（stay）
-        low: 下降（low）
+        down: 下降（down）
   date:
     abbr_day_names:
     - 日
