@@ -9,6 +9,32 @@
           %h3.panel-title
             留意すべき雪崩 Avalnche Problem
         .panel-body
+          .avalanche-type
+            = problem.avalanche_type_text
+          .avalanche-detail
+            .avalanche-zone
+              %p 標高帯 Zone
+              - image_alpine = problem.zone == :alpine ? 'altitude/alpine1.jpg' : 'altitude/alpine0.jpg'
+              = image_tag image_alpine
+              - image_treeline = problem.zone == :treeline ? 'altitude/treeline1.jpg' : 'altitude/treeline0.jpg'
+              = image_tag image_treeline
+              - image_below_treeline = problem.zone == :below_treeline ? 'altitude/below_treeline1.jpg' : 'altitude/below_treeline0.jpg'
+              = image_tag image_below_treeline
+            .avalanche-aspect
+              %p 斜面方位 Slope aspect
+              .avalanche-aspect-base
+                = image_tag 'slope/slope.jpg'
+                .avalanche-aspect-parts
+                  = image_tag "slope/slope#{problem.slope_aspect.to_s.upcase}.png"
+            .avalanche-trigger
+              %p 誘発の可能性
+              = image_tag 'evoked/evoked1.jpg'
+            .avalanche-size
+              %p サイズ
+              = image_tag 'size/size1.png'
+          .avalanche-comments
+            = problem.comments
+
           %table.table.table-bordered.table-striped
             %tr
               %td
