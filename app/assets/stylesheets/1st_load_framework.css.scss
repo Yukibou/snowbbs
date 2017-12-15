@@ -46,6 +46,7 @@ main {
   margin-top: 51px; // accommodate the navbar
   }
 .for-iframe {
+  padding: 0px;
   margin-top: 0px;
 }
 .for-iframe-title {
@@ -53,6 +54,9 @@ main {
   padding: 5px;
   background-color: #c486b8;
   color: #F7F7F7;
+}
+.for-iframe-0-padding {
+  padding: 0px;
 }
 .font-white {
   color :#F7F7F7;
