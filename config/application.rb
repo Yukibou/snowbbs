@@ -25,6 +25,6 @@ module Snowbbs
     config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
     # iframe許容
-    config.action_dispatch.default_headers["X-Frame-Options"] = "DENY"
+    config.action_dispatch.default_headers["X-Frame-Options"] = "ALLOWALL"
   end
 end
