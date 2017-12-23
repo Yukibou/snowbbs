@@ -13,10 +13,11 @@
     .panel.panel-default
       .panel-body.for-iframe-0-padding
         %h4.for-iframe-title
-          = link_to observations_path do
+          = link_to observations_path, targt: '_top' do
             .for-iframe-title
-              雪の掲示板
               %small.font-white snow bulletin board
+              %br
+              雪の掲示板
     %main.for-iframe{:role => "main"}
       = render 'layouts/messages'
       = yield
