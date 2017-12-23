@@ -10,15 +10,17 @@
         %tr
           - unless policy(Observation).public_user?
             %th= t('activerecord.attributes.observation.publish')
-          %th 観測日・エリア
-          %th 山岳・場所
+          %th
+            %small 観測日・エリア
+          %th
+            %small 山岳・場所
           %th.hidden-xs
-            投稿者
+            %small 投稿者
           %th.hidden-xs{:style => "width:48px;"}
           %th.hidden-xs{:style => "width:48px;"}
           %th.hidden-xs{:style => "width:48px;"}
           %th.hidden-xs
-            投稿日
+            %small 投稿日
 
       %tbody
         - @observations.each do |observation|
