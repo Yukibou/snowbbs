@@ -212,6 +212,8 @@ ja:
       confidence:
         good: Good
         fair: Fair
+        high: High
+        moderate: Moderate
         low: Low
     avalanche_problem:
       avalanche_type:
