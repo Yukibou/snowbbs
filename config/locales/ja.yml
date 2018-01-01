@@ -210,8 +210,6 @@ ja:
         low: 1 低い（Low）
         no_rating: 評価なし（No Rating）
       confidence:
-        good: Good
-        fair: Fair
         high: High
         moderate: Moderate
         low: Low
