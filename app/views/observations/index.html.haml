@@ -39,4 +39,4 @@
               = image_tag 'bbs_avalanche.png', width: '24' if observation.avalanche_occurred
             %td.hidden-xs
               = observation.created_at.strftime("%y%m%d")
-= paginate @observations
+    = paginate @observations
