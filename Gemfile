@@ -31,6 +31,7 @@ gem 'rmagick', require: 'rmagick'
 gem 'fog'
 gem 'font-awesome-rails'
 gem 'ransack'
+gem 'kaminari'
 
 group :development do
   gem 'byebug', platform: :mri

@@ -7,7 +7,7 @@ class ObservationsController < ApplicationController
     # 検索オブジェクト
     @search = Observation.ransack(params[:q])
     # 検索結果
-    @observations = @search.result
+    @observations = @search.result.page(params[:page])
     @observations = policy_scope(@observations).order(observation_at: :desc)
   end
 

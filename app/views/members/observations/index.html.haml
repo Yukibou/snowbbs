@@ -48,3 +48,4 @@
         %td= observation.created_at.strftime("%y%m%d")
         %td= link_to_if(policy(observation).update?, t('link.Edit'), edit_members_observation_path(observation), class: 'btn btn-xs btn-info'){}
         %td= link_to_if(policy(observation).destroy?, t('link.Destroy'), [:members, observation], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger'){}
+= paginate @observations
