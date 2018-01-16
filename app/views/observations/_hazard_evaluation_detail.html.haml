@@ -6,7 +6,9 @@
     .panel-body
       %table.table.table-bordered.table-striped
         %tr
-          %td.td-nowrap
+          %td.hidden-xs{:style => "width:380px;"}
+            = t('activerecord.attributes.evaluation.priority')
+          %td.visible-xs{:style => "width:160px;"}
             = t('activerecord.attributes.evaluation.priority')
           %td
             = evaluation.priority

@@ -6,7 +6,9 @@
   .panel-body
     %table.table.table-bordered.table-striped
       %tr
-        %td
+        %td.hidden-xs{:style => "width:380px;"}
+          = t('activerecord.attributes.danger_rating.alpine_zone')
+        %td.visible-xs{:style => "width:160px;"}
           = t('activerecord.attributes.danger_rating.alpine_zone')
         %td
           = danger_rating.alpine_zone_text

@@ -1,5 +1,6 @@
 - if policy(@observations).new?
-  = link_to fa_icon('plus-circle', text: t('link.New')), new_members_observation_path, class: 'btn btn-default'
+  %p
+    = link_to fa_icon('plus-circle', text: t('link.New')), new_members_observation_path, class: 'btn btn-primary'
 
   = search_form_for([:members, @search], html: {class: 'form-inline'}) do |f|
     = f.label :user
@@ -46,6 +47,6 @@
         %td= image_tag 'bbs_spin.png', width: '24' if observation.spin_nos.present?
         %td= image_tag 'bbs_avalanche.png', width: '24' if observation.avalanche_occurred
         %td= observation.created_at.strftime("%y%m%d")
-        %td= link_to_if(policy(observation).update?, t('link.Edit'), edit_members_observation_path(observation), class: 'btn btn-xs btn-info'){}
+        %td= link_to_if(policy(observation).update?, t('link.Edit'), edit_members_observation_path(observation), class: 'btn btn-xs btn-primary'){}
         %td= link_to_if(policy(observation).destroy?, t('link.Destroy'), [:members, observation], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger'){}
 = paginate @observations

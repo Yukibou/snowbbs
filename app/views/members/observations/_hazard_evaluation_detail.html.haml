@@ -6,7 +6,9 @@
     .panel-body
       %table.table.table-bordered.table-striped
         %tr
-          %td.td-nowrap
+          %td.hidden-xs{:style => "width:380px;"}
+            = t('activerecord.attributes.evaluation.priority')
+          %td.visible-xs{:style => "width:160px;"}
             = t('activerecord.attributes.evaluation.priority')
           %td
             = evaluation.priority
@@ -17,11 +19,13 @@
             = evaluation.problem_text
         %tr
           %td
+            -#= simple_format t('activerecord.attributes.evaluation.has_observe')
             = t('activerecord.attributes.evaluation.has_observe')
           %td
             = to_yes_no(evaluation.has_observe)
         %tr
           %td
+            -#= simple_format t('activerecord.attributes.evaluation.has_weak_layer')
             = t('activerecord.attributes.evaluation.has_weak_layer')
           %td
             = to_yes_no(evaluation.has_weak_layer)

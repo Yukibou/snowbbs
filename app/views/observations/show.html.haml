@@ -1,72 +1,83 @@
 -#= link_to 'Back >', :back
-%p= link_to_function 'Back >', 'history.back()'
-.panel.panel-info
-  .panel-heading
-    .panel-title
-      - observation_date = @observation.observation_at.strftime("%y%m%d")
-      = "#{observation_date} #{@observation.mountain}"
-.panel.panel-info
-  .panel-heading
-    %h3.panel-title
-      日付と場所 Date & Location
-  .panel-body
-    .row
-      - @observation.images.each do |image|
-        .col-sm-4.observation-image
-          = image_tag image, width: '240'
+.row
+  .col-sm-3.hidden-xs
+    %ul
+      - Area.public_area.sort_order.each do |area|
+        %li
+          = link_to "#{area.name}(#{policy_scope(area.observations).size})", observations_path(q: {area_id_eq: area.id})
+  .col-sm-9
+    %p= link_to_function 'Back >', 'history.back()'
+    .panel.panel-info
+      .panel-heading
+        .panel-title
+          - observation_date = @observation.observation_at.strftime("%y%m%d")
+          = "#{observation_date} #{@observation.mountain}"
+    .panel.panel-info
+      .panel-heading
+        %h3.panel-title
+          日付と場所 Date & Location
+      .panel-body
+        .row
+          - @observation.images.each do |image|
+            .col-sm-4.observation-image
+              = image_tag image, width: '240'
 
-    %table.table.table-bordered.table-striped
-      %tr
-        %td
-          = t('activerecord.attributes.observation.user')
-        %td
-          = @observation.user.name
-      %tr
-        %td
-          = t('activerecord.attributes.observation.observation_at')
-        %td
-          = observation_date
-      %tr
-        %td
-          = t('activerecord.attributes.observation.created_at')
-        %td
-          = @observation.created_at.strftime("%y%m%d %H:%M")
-      %tr
-        %td
-          = t('activerecord.attributes.observation.area')
-        %td
-          = @observation.area.name
-      %tr
-        %td
-          = t('activerecord.attributes.observation.mountain')
-        %td
-          = @observation.mountain
-      %tr
-        %td
-          = t('activerecord.attributes.observation.location')
-        %td
-          = @observation.location
-      %tr
-        %td
-          = t('activerecord.attributes.observation.co_worker')
-        %td
-          = @observation.co_worker
-      %tr
-        %td
-          = t('activerecord.attributes.observation.avalanche_infomation')
-        %td
-          = link_to_if(@observation.avalanche_infomation.present?, fa_icon('external-link', text: '雪崩情報'), @observation.avalanche_infomation, target: '_blank'){}
-= render 'observation_detail', observation: @observation
-- unless policy(@observation).public_user?
-  = render 'evaluation', observation: @observation
-.panel.panel-info
-  .panel-heading
-    %h3.panel-title
-      総括 Summary
-  .panel-body
-    %table.table.table-bordered.table-striped
-      %tr
-        %td
-          = t('activerecord.attributes.observation.general_comments')
-        %td
-          = @observation.general_comments
+        %table.table.table-bordered.table-striped
+          %tr
+            %td.hidden-xs{:style => "width:380px;"}
+              = t('activerecord.attributes.observation.user')
+            %td.visible-xs{:style => "width:160px;"}
+              = t('activerecord.attributes.observation.user')
+            %td
+              = @observation.user.name
+          %tr
+            %td
+              = t('activerecord.attributes.observation.observation_at')
+            %td
+              = observation_date
+          %tr
+            %td
+              = t('activerecord.attributes.observation.created_at')
+            %td
+              = @observation.created_at.strftime("%y%m%d %H:%M")
+          %tr
+            %td
+              = t('activerecord.attributes.observation.area')
+            %td
+              = @observation.area.name
+          %tr
+            %td
+              = t('activerecord.attributes.observation.mountain')
+            %td
+              = @observation.mountain
+          %tr
+            %td
+              = t('activerecord.attributes.observation.location')
+            %td
+              = @observation.location
+          %tr
+            %td
+              = t('activerecord.attributes.observation.co_worker')
+            %td
+              = @observation.co_worker
+          %tr
+            %td
+              = t('activerecord.attributes.observation.avalanche_infomation')
+            %td
+              = link_to_if(@observation.avalanche_infomation.present?, fa_icon('external-link', text: '雪崩情報'), @observation.avalanche_infomation, target: '_blank'){}
+    = render 'observation_detail', observation: @observation
+    - unless policy(@observation).public_user?
+      = render 'evaluation', observation: @observation
+    .panel.panel-info
+      .panel-heading
+        %h3.panel-title
+          総括 Summary
+      .panel-body
+        %table.table.table-bordered.table-striped
+          %tr
+            %td.hidden-xs{:style => "width:380px;"}
+              = t('activerecord.attributes.observation.general_comments')
+            %td.visible-xs{:style => "width:160px;"}
+              = t('activerecord.attributes.observation.general_comments')
+            %td
+              = @observation.general_comments

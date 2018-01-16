@@ -16,7 +16,9 @@
 
     %table.table.table-bordered.table-striped
       %tr
-        %td
+        %td.hidden-xs{:style => "width:380px;"}
+          = t('activerecord.attributes.observation.user')
+        %td.visible-xs{:style => "width:160px;"}
           = t('activerecord.attributes.observation.user')
         %td
           = @observation.user.name
@@ -65,7 +67,9 @@
   .panel-body
     %table.table.table-bordered.table-striped
       %tr
-        %td
+        %td.hidden-xs{:style => "width:380px;"}
+          = t('activerecord.attributes.observation.general_comments')
+        %td.visible-xs{:style => "width:160px;"}
           = t('activerecord.attributes.observation.general_comments')
         %td
           = @observation.general_comments
