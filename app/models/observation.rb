@@ -8,6 +8,8 @@ class Observation < ApplicationRecord
   accepts_nested_attributes_for :evaluations
   accepts_nested_attributes_for :danger_rating
 
+  scope :list_order, -> { order(observation_at: :desc, id: :asc) }
+
   mount_uploaders :images, ImageUploader
 
   validates :user, :observation_at, :area, :mountain, :location, presence: true
