@@ -35,11 +35,23 @@
             %td.hidden-xs
               = observation.user.name
             %td.hidden-xs
-              = image_tag 'bbs_photo.png', width: '24' if observation.images.present?
+              - if observation.images.present?
+                = image_tag 'bbs_photo.png', width: '24'
+              - else
+                .text-center
+                  = "-"
             %td.hidden-xs
-              = image_tag 'bbs_spin.png', width: '24' if observation.spin_nos.present?
+              - if observation.spin_nos.present?
+                = image_tag 'bbs_spin.png', width: '24'
+              - else
+                .text-center
+                  = "-"
             %td.hidden-xs
-              = image_tag 'bbs_avalanche.png', width: '24' if observation.avalanche_occurred
+              - if observation.avalanche_occurred
+                = image_tag 'bbs_avalanche.png', width: '24'
+              - else
+                .text-center
+                  = "-"
             %td.hidden-xs
               = observation.created_at.strftime("%y%m%d")
     = paginate @observations
