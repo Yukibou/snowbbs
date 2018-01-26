@@ -1,6 +1,6 @@
 .row
   .col-sm-3.hidden-xs
-    %ul
+    %ul.margin-left--15
       - Area.public_area.sort_order.each do |area|
         %li
           = link_to "#{area.name}(#{policy_scope(area.observations).size})", observations_path(q: {area_id_eq: area.id})
