@@ -27,7 +27,10 @@
           %tr
             - unless policy(observation).public_user?
               %td= to_publish_value(observation.publish)
-            %td= link_to "#{observation.observation_at.strftime("%y%m%d")} #{observation.area.name}", observation, target: '_top'
+            %td.hidden-xs
+              = link_to "#{observation.observation_at.strftime("%y%m%d")} #{observation.area.name}", observation
+            %td.visible-xs
+              = link_to "#{observation.observation_at.strftime("%y%m%d")} #{observation.area.name}", observation, target: '_top'
             %td= "#{observation.mountain} #{observation.location}"
             %td.hidden-xs
               = observation.user.name
