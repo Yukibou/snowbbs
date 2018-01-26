@@ -101,3 +101,7 @@ section {
   @extend .btn-primary;
   @extend .btn-xs;
 }
+
+.body-jan__entry-box::-webkit-scrollbar {
+  display: none;
+}
