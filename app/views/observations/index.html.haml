@@ -8,8 +8,6 @@
     %table.table.table-striped
       %thead
         %tr
-          - unless policy(Observation).public_user?
-            %th= t('activerecord.attributes.observation.publish')
           %th
             %small 観測日・エリア
           %th
@@ -25,8 +23,6 @@
       %tbody
         - @observations.each do |observation|
           %tr
-            - unless policy(observation).public_user?
-              %td= to_publish_value(observation.publish)
             %td.hidden-xs
               = link_to "#{observation.observation_at.strftime("%y%m%d")} #{observation.area.name}", observation
             %td.visible-xs
