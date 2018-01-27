@@ -32,6 +32,7 @@ gem 'fog'
 gem 'font-awesome-rails'
 gem 'ransack'
 gem 'kaminari'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'byebug', platform: :mri
