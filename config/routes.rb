@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   namespace :members do
     root to: 'observations#index'
     resources :avalanche_infomations
-    resources :observations
+    resources :observations do
+      resources :images, only: [:create, :destroy]
+    end
     resources :users
     resources :areas
   end

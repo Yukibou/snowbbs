@@ -66,10 +66,12 @@
         = f.input :spin_nos, placeholder: 'SPINのNO、複数の場合はカンマで区切る'
         = f.input :comments, as: :text, input_html: {rows: 5}
         .row
-          - f.object.images.each do |image|
+          - f.object.images.each_with_index do |image, index|
             .col-sm-4.observation-image
               = image_tag image.thumb
-        = f.input :images, as: :file, input_html: { multiple: true }, wrapper: :horizontal_file_input
+              .text-center
+                = link_to "この写真を削除（Delete）", members_observation_image_path(@observation, index), method: :delete, data: { confirm: "削除して良いですか？ Are you sure you want to delete this image?" }
+        = f.input :images, as: :file, input_html: { multiple: true }, wrapper: :horizontal_file_input, hint: '写真を複数選択することで、まとめてアップロードできます（３枚まで）'
         = f.input :movie_url, placeholder: '動画がある場合はURLを、ない場合は空白のままとしてください。'
   .panel.panel-info
     .panel-heading
