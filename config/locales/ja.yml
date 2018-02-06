@@ -70,7 +70,7 @@ ja:
       observation:
         user: 投稿者 Observer
         observation_at:	観察日付 Observation At
-        created_at: 投稿日時 Created At
+        created_at: 投稿日時 Posted At
         area: エリア Range
         avalanche_infomation: 雪崩情報 Avalanche Infomation
         mountain: 山岳 Mountain
