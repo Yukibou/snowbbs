@@ -105,3 +105,12 @@ section {
 .body-jan__entry-box::-webkit-scrollbar {
   //display: none;
 }
+
+// 320以下は、nadare.jpのTOPへの組み込みを想定している
+// 基本的にスマホの場合はホントを大きくしている
+@media screen and(max-width: 768px) {
+  body{font-size: 2.0em;}
+}
+@media screen and(max-width: 320px) {
+  body{font-size: 1.0em;}
+}
