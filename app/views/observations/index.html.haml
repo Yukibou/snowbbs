@@ -1,53 +1,54 @@
-.row
-  .col-sm-3.hidden-xs
-    %ul.margin-left--15
-      - Area.public_area.sort_order.each do |area|
-        %li
-          = link_to "#{area.name}(#{policy_scope(area.observations).size})", observations_path(q: {area_id_eq: area.id})
-  .col-sm-9
-    %table.table.table-striped
-      %thead
-        %tr
-          %th
-            %small 観測日・エリア
-          %th
-            %small 山岳・場所
-          %th.hidden-xs
-            %small 投稿者
-          %th.hidden-xs{:style => "width:48px;"}
-          %th.hidden-xs{:style => "width:48px;"}
-          %th.hidden-xs{:style => "width:48px;"}
-          %th.hidden-xs
-            %small 投稿日
-
-      %tbody
-        - @observations.each do |observation|
+.observation-index
+  .row
+    .col-sm-3.hidden-xs
+      %ul.margin-left--15
+        - Area.public_area.sort_order.each do |area|
+          %li
+            = link_to "#{area.name}(#{policy_scope(area.observations).size})", observations_path(q: {area_id_eq: area.id})
+    .col-sm-9
+      %table.table.table-striped
+        %thead
           %tr
-            %td.hidden-xs
-              = link_to "#{observation.observation_at.strftime("%y%m%d")} #{observation.area.name}", observation
-            %td.visible-xs
-              = link_to "#{observation.observation_at.strftime("%y%m%d")} #{observation.area.name}", observation, target: '_top'
-            %td= "#{observation.mountain} #{observation.location}"
-            %td.hidden-xs
-              = observation.user.name
-            %td.hidden-xs
-              - if observation.images.present?
-                = image_tag 'bbs_photo.png', width: '24'
-              - else
-                .text-center
-                  = "-"
-            %td.hidden-xs
-              - if observation.spin_nos.present?
-                = image_tag 'bbs_spin.png', width: '24'
-              - else
-                .text-center
-                  = "-"
-            %td.hidden-xs
-              - if observation.avalanche_occurred
-                = image_tag 'bbs_avalanche.png', width: '24'
-              - else
-                .text-center
-                  = "-"
-            %td.hidden-xs
-              = observation.created_at.strftime("%y%m%d")
-    = paginate @observations
+            %th
+              %small 観測日・エリア
+            %th
+              %small 山岳・場所
+            %th.hidden-xs
+              %small 投稿者
+            %th.hidden-xs{:style => "width:48px;"}
+            %th.hidden-xs{:style => "width:48px;"}
+            %th.hidden-xs{:style => "width:48px;"}
+            %th.hidden-xs
+              %small 投稿日
+
+        %tbody
+          - @observations.each do |observation|
+            %tr
+              %td.hidden-xs
+                = link_to "#{observation.observation_at.strftime("%y%m%d")} #{observation.area.name}", observation
+              %td.visible-xs
+                = link_to "#{observation.observation_at.strftime("%y%m%d")} #{observation.area.name}", observation, target: '_top'
+              %td= "#{observation.mountain} #{observation.location}"
+              %td.hidden-xs
+                = observation.user.name
+              %td.hidden-xs
+                - if observation.images.present?
+                  = image_tag 'bbs_photo.png', width: '24'
+                - else
+                  .text-center
+                    = "-"
+              %td.hidden-xs
+                - if observation.spin_nos.present?
+                  = image_tag 'bbs_spin.png', width: '24'
+                - else
+                  .text-center
+                    = "-"
+              %td.hidden-xs
+                - if observation.avalanche_occurred
+                  = image_tag 'bbs_avalanche.png', width: '24'
+                - else
+                  .text-center
+                    = "-"
+              %td.hidden-xs
+                = observation.created_at.strftime("%y%m%d")
+      = paginate @observations
