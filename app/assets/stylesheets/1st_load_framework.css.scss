@@ -108,11 +108,11 @@ section {
 
 // 320以下は、nadare.jpのTOPへの組み込みを想定している
 // 基本的にスマホの場合はホントを大きくしている
-@media only screen and(max-device-width: 768px) {
+@media only screen and(max-width: 768px) {
   .observation-index {
     font-size: 2.0em;
   }
 }
-@media only screen and(max-device-width: 320px) {
+@media only screen and(max-width: 320px) {
   body{font-size: 1.0em;}
 }
