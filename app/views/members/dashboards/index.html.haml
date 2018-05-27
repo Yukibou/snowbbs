@@ -31,3 +31,15 @@
               %td= area.name
               %td= area.observations.count
 
+    .col-md-4.portfolio-item
+      %h3
+        %a{:href => "#"} 日付別
+      %p すべて
+      %table.table
+        %tbody
+          %th 日付
+          %th= t('activerecord.attributes.user.observation_count')
+          - @observation_counts_by_date.each do |obs|
+            %tr
+              %td= obs[0]
+              %td= obs[1]
