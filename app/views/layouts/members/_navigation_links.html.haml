@@ -1,4 +1,5 @@
 %ul.nav.navbar-nav
+  %li= link_to 'ダッシュボード', members_dashboards_path
   %li= link_to '観察データ', members_observations_path
   %li= link_to '雪崩情報', members_avalanche_infomations_path
   - if user_signed_in? && current_user.admin?

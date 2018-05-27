@@ -1,0 +1,33 @@
+.container
+  .row
+    .col-lg-12
+      %h1.page-header
+        ダッシュボード
+        %small 観察データ統計
+  .row
+    .col-md-4.portfolio-item
+      %h3
+        %a{:href => "#"} 個人別観察数
+      %p 上位１０名
+      %table.table
+        %tbody
+          %th= t('activerecord.attributes.user.name')
+          %th= t('activerecord.attributes.user.observation_count')
+          - @users.each do |user|
+            %tr
+              %td= user.name
+              %td= user.observations.count
+
+    .col-md-4.portfolio-item
+      %h3
+        %a{:href => "#"} 地域別
+      %p すべて
+      %table.table
+        %tbody
+          %th= t('activerecord.attributes.observation.area')
+          %th= t('activerecord.attributes.observation.area_count')
+          - @areas.each do |area|
+            %tr
+              %td= area.name
+              %td= area.observations.count
+

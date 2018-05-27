@@ -72,6 +72,7 @@ ja:
         observation_at:	観察日付 Observation At
         created_at: 投稿日時 Posted At
         area: エリア Range
+        area_count: 観察数
         avalanche_infomation: 雪崩情報 Avalanche Infomation
         mountain: 山岳 Mountain
         co_worker: 同行者 Co-worker
@@ -108,8 +109,9 @@ ja:
       user:
         public: 公開
         email: メールアドレス
-        name: 氏名
+        name: 観察者
         role: 権限
+        observation_count: 観察数
       area:
         name: エリア名
         public: 公開

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'observations#index'
   devise_for :users, path: :members
   namespace :members do
+    resources :dashboards, only: [:index]
     root to: 'observations#index'
     resources :avalanche_infomations
     resources :observations do
