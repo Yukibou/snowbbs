@@ -5,7 +5,7 @@ class Observation < ApplicationRecord
   belongs_to :avalanche_infomation, optional: true
   has_many :evaluations, ->{ order(:priority) }, dependent: :delete_all, inverse_of: :observation
   has_one :danger_rating, dependent: :delete, inverse_of: :observation
-  accepts_nested_attributes_for :evaluations
+  accepts_nested_attributes_for :evaluations, allow_destroy: true
   accepts_nested_attributes_for :danger_rating
 
   scope :list_order, -> { order(observation_at: :desc, id: :desc) }
