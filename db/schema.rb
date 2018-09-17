@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211141537) do
+ActiveRecord::Schema.define(version: 20180917040827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -154,6 +154,32 @@ ActiveRecord::Schema.define(version: 20171211141537) do
     t.boolean  "public",                 default: true
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "zone_details", force: :cascade do |t|
+    t.integer  "avalanche_problems_id"
+    t.integer  "zone"
+    t.boolean  "aspect_n",              default: false
+    t.integer  "aspect_n_power",        default: 0
+    t.boolean  "aspect_ne",             default: false
+    t.boolean  "boolean",               default: false
+    t.integer  "aspect_ne_power",       default: 0
+    t.integer  "integer",               default: 0
+    t.boolean  "aspect_e",              default: false
+    t.integer  "aspect_e_power",        default: 0
+    t.boolean  "aspect_se",             default: false
+    t.integer  "aspect_se_power",       default: 0
+    t.boolean  "aspect_s",              default: false
+    t.integer  "aspect_s_power",        default: 0
+    t.boolean  "aspect_sw",             default: false
+    t.integer  "aspect_sw_power",       default: 0
+    t.boolean  "aspect_w",              default: false
+    t.integer  "aspect_w_power",        default: 0
+    t.boolean  "aspect_nw",             default: false
+    t.integer  "aspect_nw_power",       default: 0
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.index ["avalanche_problems_id"], name: "index_zone_details_on_avalanche_problems_id", using: :btree
   end
 
 end

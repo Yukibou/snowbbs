@@ -1,6 +1,9 @@
 class AvalancheProblem < ApplicationRecord
   extend Enumerize
   belongs_to :avalanche_infomation, inverse_of: :avalanche_problems
+  has_many :zone_details, dependent: :delete_all, inverse_of: :avalanche_problem
+  accepts_nested_attributes_for :zone_details
+
 
   enumerize :avalanche_type, in: [
       :dry_loose_snow,
