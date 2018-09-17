@@ -6,9 +6,9 @@
     .panel-body
       .form-inputs
         = f.input :avalanche_type
-        = f.input :zone
+        = f.simple_fields_for :zone_details do |zd|
+          = render 'zone_detail_fields', f: zd
         = f.input :size
-        = f.input :slope_aspect
         = f.input :triggering
         = f.input :comments
       = link_to_remove_association "この雪崩の削除", f, class: 'btn btn-danger'

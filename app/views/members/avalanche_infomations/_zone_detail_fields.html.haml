@@ -1,0 +1,19 @@
+%h4
+  = f.label f.object.zone
+= f.input :zone, as: :hidden
+= f.input :aspect_n, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_n_power, as: :radio_buttons, collection: ZoneDetail.aspect_n_powers.keys, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_ne, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_ne_power, as: :radio_buttons, collection: ZoneDetail.aspect_ne_powers.keys, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_e, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_e_power, as: :radio_buttons, collection: ZoneDetail.aspect_e_powers.keys, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_se, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_se_power, as: :radio_buttons, collection: ZoneDetail.aspect_se_powers.keys, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_s, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_s_power, as: :radio_buttons, collection: ZoneDetail.aspect_s_powers.keys, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_sw, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_sw_power, as: :radio_buttons, collection: ZoneDetail.aspect_sw_powers.keys, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_w, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_w_power, as: :radio_buttons, collection: ZoneDetail.aspect_w_powers.keys, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_nw, wrapper: :horizontal_radio_and_checkboxes
+= f.input :aspect_nw_power, as: :radio_buttons, collection: ZoneDetail.aspect_nw_powers.keys, wrapper: :horizontal_radio_and_checkboxes

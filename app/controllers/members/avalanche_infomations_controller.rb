@@ -12,7 +12,10 @@ class Members::AvalancheInfomationsController < Members::ApplicationController
 
   def new
     @avalanche_infomation = current_user.avalanche_infomations.new
-    @avalanche_infomation.avalanche_problems.build
+    @avalanche_problem = @avalanche_infomation.avalanche_problems.build
+    @avalanche_problem.zone_details.build(zone: 1)
+    @avalanche_problem.zone_details.build(zone: 2)
+    @avalanche_problem.zone_details.build(zone: 3)
   end
 
   def edit
@@ -49,6 +52,7 @@ class Members::AvalancheInfomationsController < Members::ApplicationController
   end
 
   private
+
   def set_avalanche_infomation
     @avalanche_infomation = AvalancheInfomation.find(params[:id])
     authorize @avalanche_infomation
@@ -79,6 +83,6 @@ class Members::AvalancheInfomationsController < Members::ApplicationController
         :weather,
         :travel_advisory,
         avalanche_problems_attributes: AvalancheProblem::REGISTRABLE_ATTRIBUTES
-        )
+    )
   end
 end
