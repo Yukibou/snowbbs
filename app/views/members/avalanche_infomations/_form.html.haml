@@ -35,16 +35,11 @@
         = f.input :below_treeline_confidence
         = f.input :below_treeline_comments, as: :text
 
-  .panel.panel-info
-    .panel-heading
-      %h3.panel-title
-        留意すべき雪崩 Avalanche Problem
-    .panel-body
-      #avalanche-problem
-        = f.simple_fields_for :avalanche_problems do |ap|
-          = render 'avalanche_problem_fields', f: ap
-        .links
-          = link_to_add_association '留意すべき雪崩の追加', f, :avalanche_problems, class: 'btn btn-info'
+  #avalanche-problem
+    = f.simple_fields_for :avalanche_problems do |ap|
+      = render 'avalanche_problem_fields', f: ap
+    .links
+      = link_to_add_association '留意すべき雪崩の追加', f, :avalanche_problems, class: 'btn btn-info'
 
   .panel.panel-info
     .panel-heading
