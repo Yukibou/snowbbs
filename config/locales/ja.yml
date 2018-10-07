@@ -17,7 +17,18 @@ ja:
       area: エリア
       avalanche_infomation: 雪崩情報
       avalanche_problem: 留意すべき雪崩
+      zone_detail:
     attributes:
+      zone_detail:
+        zone: 標高帯
+        aspect_n: N
+        aspect_ne: NE
+        aspect_e: E
+        aspect_se: SE
+        aspect_s: S
+        aspect_sw: SW
+        aspect_w: W
+        aspect_nw: NW
       avalanche_problem: &avalanche_problem
         avalanche_type: 雪崩種別 Avalanche Type
         size: サイズ Size
@@ -121,6 +132,36 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+  enums:
+    zone_detail:
+      zone:
+        alpine: アルパイン Alpine
+        treeline: 森林限界 Treeline
+        below_treeline: 森林帯 Below Treeline
+      aspect_n_power:
+        n_strong: 強
+        n_weak: 弱
+      aspect_ne_power:
+        ne_strong: 強
+        ne_weak: 弱
+      aspect_e_power:
+        e_strong: 強
+        e_weak: 弱
+      aspect_se_power:
+        se_strong: 強
+        se_weak: 弱
+      aspect_s_power:
+        s_strong: 強
+        s_weak: 弱
+      aspect_sw_power:
+        sw_strong: 強
+        sw_weak: 弱
+      aspect_w_power:
+        w_strong: 強
+        w_weak: 弱
+      aspect_nw_power:
+        nw_strong: 強
+        nw_weak: 弱
   enumerize:
     observation:
       sky:

@@ -33,6 +33,7 @@ gem 'font-awesome-rails'
 gem 'ransack'
 gem 'kaminari'
 gem 'newrelic_rpm'
+gem 'enum_help'
 
 group :development do
   gem 'byebug', platform: :mri
