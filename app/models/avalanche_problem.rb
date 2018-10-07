@@ -18,7 +18,8 @@ class AvalancheProblem < ApplicationRecord
   # FIXME 不要カラム消すこと
   # enumerize :zone, in: [:alpine, :treeline, :below_treeline]
   enumerize :size, in: ['1', '1.5', '1-2', '1-2.5', '1-3', '1.5-2', '1.5-2.5', '1.5-3', '2', '2-3', '3', '3-4', '4']
-  enumerize :triggering, in: [:certain, :very_likely, :likely, :possible, :unlikely]
+  TRIGGERING = [:certain, :very_likely, :likely, :possible, :unlikely]
+  enumerize :triggering, in: TRIGGERING
   # enumerize :slope_aspect, in: [:n, :ne, :e, :se, :s, :sw, :w, :nw]
 
   REGISTRABLE_ATTRIBUTES = [:_destroy, :id, :avalanche_type, :size, :triggering, :comments ,zone_details_attributes: ZoneDetail::REGISTRABLE_ATTRIBUTES]
