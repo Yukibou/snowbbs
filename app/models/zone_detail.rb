@@ -11,5 +11,6 @@ class ZoneDetail < ApplicationRecord
   enum aspect_w_power: { w_strong: 2, w_weak: 1 }
   enum aspect_nw_power: { nw_strong: 2, nw_weak: 1 }
 
+  ASPECTS = %i(n ne e se s sw w nw)
   REGISTRABLE_ATTRIBUTES = %i(_destroy id zone avalanche_problem_id zone aspect_n aspect_n_power aspect_ne aspect_ne_power aspect_e aspect_e_power aspect_se aspect_se_power aspect_s aspect_s_power aspect_sw aspect_sw_power aspect_w aspect_w_power aspect_nw aspect_nw_power )
 end
