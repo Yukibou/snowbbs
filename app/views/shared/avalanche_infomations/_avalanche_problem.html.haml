@@ -32,10 +32,10 @@
               = image_tag "info3_graph_#{trigger}_on.png"
             - else
               = image_tag "info3_graph_#{trigger}_off.png"
-
         .avalanche-size
           %p サイズ
-          = image_tag 'size/size1.png'
+          = render 'shared/avalanche_infomations/avalanche_problem_size', problem: problem
+
 
       .avalanche-comments
         = problem.comments
