@@ -35,10 +35,12 @@
           = render 'shared/avalanche_infomations/avalanche_problem_size', problem: problem
 
       .avalanche-comments
-        = problem.comments
+        %p
+          = problem.comments
 
-      %table.table.table-bordered.table-striped
-        %tr
+      -# TODO 不要なカラムを消すこと
+      -#%table.table.table-bordered.table-striped
+      -#  %tr
           -#%td
           -#  = t('activerecord.attributes.avalanche_problem.avalanche_type')
           -#%td
@@ -53,8 +55,8 @@
         -#    = t('activerecord.attributes.avalanche_problem.size')
         -#  %td
         -#    = problem.size_text
-        %tr
-          %td
-            = t('activerecord.attributes.avalanche_problem.comments')
-          %td
-            = problem.comments
+        -#%tr
+        -#  %td
+        -#    = t('activerecord.attributes.avalanche_problem.comments')
+        -#  %td
+        -#    = problem.comments
