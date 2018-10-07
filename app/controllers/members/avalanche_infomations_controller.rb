@@ -13,9 +13,9 @@ class Members::AvalancheInfomationsController < Members::ApplicationController
   def new
     @avalanche_infomation = current_user.avalanche_infomations.new
     @avalanche_problem = @avalanche_infomation.avalanche_problems.build
-    @avalanche_problem.zone_details.build(zone: 1)
-    @avalanche_problem.zone_details.build(zone: 2)
-    @avalanche_problem.zone_details.build(zone: 3)
+    @avalanche_problem.zone_details.build(zone: :alpine)
+    @avalanche_problem.zone_details.build(zone: :treeline)
+    @avalanche_problem.zone_details.build(zone: :below_treeline)
   end
 
   def edit
