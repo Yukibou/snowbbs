@@ -78,6 +78,6 @@
   = @avalanche_infomation.travel_advisory
 
 - if policy(@avalanche_infomation).update?
-  = link_to 'Edit', edit_members_avalanche_infomation_path(@avalanche_infomation)
+  = link_to 'Edit', edit_members_avalanche_infomation_path(@avalanche_infomation), class: 'btn btn-primary'
   \|
-  = link_to 'Back', members_avalanche_infomations_path
+  = link_to 'Back', members_avalanche_infomations_path, class: 'btn btn-warning'
