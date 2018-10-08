@@ -5,7 +5,7 @@
   %h5.summary-title
     = problem.avalanche_type_text
   .row
-    .col-xs-6.avalanche-aspect
+    .col-sm-6.col-xs-12.avalanche-aspect
       .avalanche-aspect-base
         = image_tag 'info2_bg1.png'
         .avalanche-aspect-base-zone
@@ -20,13 +20,13 @@
                 - else
                   = image_tag "info2_#{zone}_#{aspect}_b.png"
 
-    .col-xs-3.avalanche-trigger
+    .col-sm-3.col-xs-6.avalanche-trigger
       - AvalancheProblem::TRIGGERING.each do |trigger|
         - if problem.triggering == trigger
           = image_tag "info3_graph_#{trigger}_on.png"
         - else
           = image_tag "info3_graph_#{trigger}_off.png"
-    .col-xs-3.avalanche-size
+    .col-sm-3.col-xs-6.avalanche-size
       = render 'shared/avalanche_infomations/avalanche_problem_size', problem: problem
 
   .avalanche-comments
