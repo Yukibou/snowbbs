@@ -2,60 +2,60 @@
 .col-sm-3
   = f.label f.object.zone_i18n
 .col-sm-9
-  %table.table-bordered
+  %table.table.table-bordered.table-condensed
     %tr
-      %td.col-sm-3
+      %td.col-xs-3
         .form-inline
           = f.label :aspect_n
           = f.input :aspect_n, wrapper: :horizontal_radio_and_checkboxes, label: false
-      %td.col-sm-6
+      %td.col-xs-6
         = f.input :aspect_n_power, as: :radio_buttons, collection: ZoneDetail.aspect_n_powers_i18n.keys, item_wrapper_class: "form-group-inline", label: false
     %tr
-      %td.col-sm-3
+      %td
         .form-inline
           = f.label :aspect_ne
           = f.input :aspect_ne, wrapper: :horizontal_radio_and_checkboxes, label: false
-      %td.col-sm-6
+      %td
         = f.input :aspect_ne_power, as: :radio_buttons, collection: ZoneDetail.aspect_ne_powers.keys, item_wrapper_class: "form-group-inline", label: false
     %tr
-      %td.col-sm-3
+      %td
         .form-inline
           = f.label :aspect_e
           = f.input :aspect_e, wrapper: :horizontal_radio_and_checkboxes, label: false
-      %td.col-sm-6
+      %td
         = f.input :aspect_e_power, as: :radio_buttons, collection: ZoneDetail.aspect_e_powers.keys, item_wrapper_class: "form-group-inline", label: false
     %tr
-      %td.col-sm-3
+      %td
         .form-inline
           = f.label :aspect_se
           = f.input :aspect_se, wrapper: :horizontal_radio_and_checkboxes, label: false
-      %td.col-sm-6
+      %td
         = f.input :aspect_se_power, as: :radio_buttons, collection: ZoneDetail.aspect_se_powers.keys, item_wrapper_class: "form-group-inline", label: false
     %tr
-      %td.col-sm-3
+      %td
         .form-inline
           = f.label :aspect_s
           = f.input :aspect_s, wrapper: :horizontal_radio_and_checkboxes, label: false
-      %td.col-sm-6
+      %td
         = f.input :aspect_s_power, as: :radio_buttons, collection: ZoneDetail.aspect_s_powers.keys,  item_wrapper_class: "form-group-inline", label: false
     %tr
-      %td.col-sm-3
+      %td
         .form-inline
           = f.label :aspect_sw
           = f.input :aspect_sw, wrapper: :horizontal_radio_and_checkboxes, label: false
-      %td.col-sm-6
+      %td
         = f.input :aspect_sw_power, as: :radio_buttons, collection: ZoneDetail.aspect_sw_powers.keys, item_wrapper_class: "form-group-inline", label: false
     %tr
-      %td.col-sm-3
+      %td
         .form-inline
           = f.label :aspect_w
           = f.input :aspect_w, wrapper: :horizontal_radio_and_checkboxes, label: false
-      %td.col-sm-6
+      %td
         = f.input :aspect_w_power, as: :radio_buttons, collection: ZoneDetail.aspect_w_powers.keys, item_wrapper_class: "form-group-inline", label: false
     %tr
-      %td.col-sm-3
+      %td
         .form-inline
           = f.label :aspect_nw
           = f.input :aspect_nw, wrapper: :horizontal_radio_and_checkboxes, label: false
-      %td.col-sm-6
+      %td
         = f.input :aspect_nw_power, as: :radio_buttons, collection: ZoneDetail.aspect_nw_powers.keys, item_wrapper_class: "form-group-inline", label: false
