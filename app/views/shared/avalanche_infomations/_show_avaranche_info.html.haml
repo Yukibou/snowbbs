@@ -1,101 +1,82 @@
-.margin-top-10
-.panel.panel-info
-  .panel-heading
-    .panel-title
-      - announced_date = @avalanche_infomation.announced_at.strftime("%y%m%d %H:%M")
-      = "#{announced_date} #{@avalanche_infomation.area_name}"
-.panel.panel-info
-  .panel-heading
-    %h3.panel-title
-      雪崩危険度と傾向 Danger Rating
-  .panel-body
-    .pull-left
-      .avalanche-zone-base
-        = image_tag "info1_bg_alp.png"
-        .avalanche-zone-parts
-          = image_tag "info1_dl_#{@avalanche_infomation.alpine_zone.to_s}.png"
-        .avalanche-zone-parts
-          = image_tag "info1_arrow_w_#{@avalanche_infomation.alpine_trend.to_s}.png"
+%h3.avalanche-info-title
+  - announced_date = @avalanche_infomation.announced_at.strftime("%y%m%d %H:%M")
+  = "雪崩情報 #{announced_date} #{@avalanche_infomation.area_name}"
+%h4.avalanche-info-subtitle
+  雪崩危険度と傾向 Danger Rating
+.pull-left
+  .avalanche-zone-base
+    = image_tag "info1_bg_alp.png"
+    .avalanche-zone-parts
+      = image_tag "info1_dl_#{@avalanche_infomation.alpine_zone.to_s}.png"
+    .avalanche-zone-parts
+      = image_tag "info1_arrow_w_#{@avalanche_infomation.alpine_trend.to_s}.png"
 
-      .avalanche-zone-base
-        = image_tag "info1_bg_tl.png"
-        .avalanche-zone-parts
-          = image_tag "info1_dl_#{@avalanche_infomation.treeline_zone.to_s}.png"
-        .avalanche-zone-parts
-          = image_tag "info1_arrow_w_#{@avalanche_infomation.treeline_trend.to_s}.png"
+  .avalanche-zone-base
+    = image_tag "info1_bg_tl.png"
+    .avalanche-zone-parts
+      = image_tag "info1_dl_#{@avalanche_infomation.treeline_zone.to_s}.png"
+    .avalanche-zone-parts
+      = image_tag "info1_arrow_w_#{@avalanche_infomation.treeline_trend.to_s}.png"
 
-      .avalanche-zone-base
-        = image_tag "info1_bg_btl.png"
-        .avalanche-zone-parts
-          = image_tag "info1_dl_#{@avalanche_infomation.below_treeline_zone.to_s}.png"
-        .avalanche-zone-parts
-          = image_tag "info1_arrow_w_#{@avalanche_infomation.below_treeline_trend.to_s}.png"
+  .avalanche-zone-base
+    = image_tag "info1_bg_btl.png"
+    .avalanche-zone-parts
+      = image_tag "info1_dl_#{@avalanche_infomation.below_treeline_zone.to_s}.png"
+    .avalanche-zone-parts
+      = image_tag "info1_arrow_w_#{@avalanche_infomation.below_treeline_trend.to_s}.png"
 
-    %table.table.table-bordered.table-striped
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.alpine_confidence')
-        %td
-          = @avalanche_infomation.alpine_confidence_text
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.alpine_comments')
-        %td
-          = @avalanche_infomation.alpine_comments
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.treeline_confidence')
-        %td
-          = @avalanche_infomation.treeline_confidence_text
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.treeline_comments')
-        %td
-          = @avalanche_infomation.treeline_comments
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.below_treeline_confidence')
-        %td
-          = @avalanche_infomation.below_treeline_confidence_text
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.below_treeline_comments')
-        %td
-          = @avalanche_infomation.below_treeline_comments
+%table.table.table-bordered.table-condensed
+  %tr
+    %th
+      標高帯
+    %th
+      信頼度
+    %th
+      コメント
+  %tr
+    %td
+      アルパイン Alpine
+    %td
+      = @avalanche_infomation.alpine_confidence_text
+    %td
+      = @avalanche_infomation.alpine_comments
+  %tr
+    %td
+      森林限界 Treeline
+    %td
+      = @avalanche_infomation.treeline_confidence_text
+    %td
+      = @avalanche_infomation.treeline_comments
+  %tr
+    %td
+      森林帯 Below Treeline
+    %td
+      = @avalanche_infomation.below_treeline_confidence_text
+    %td
+      = @avalanche_infomation.below_treeline_comments
 
 = render 'shared/avalanche_infomations/avalanche_problem', avalanche_infomation: @avalanche_infomation
 
-.panel.panel-info
-  .panel-heading
-    %h3.panel-title
-      概要 Summary
-  .panel-body
-    %table.table.table-bordered.table-striped
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.avalanche')
-        %td
-          = @avalanche_infomation.avalanche
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.snowpack')
-        %td
-          = @avalanche_infomation.snowpack
-      %tr
-        %td
-          = t('activerecord.attributes.avalanche_infomation.weather')
-        %td
-          = @avalanche_infomation.weather
+%h4.avalanche-info-subtitle
+  概要 Summary
+%h5.summary-title
+  = t('activerecord.attributes.avalanche_infomation.avalanche')
+%p.summary-content
+  = @avalanche_infomation.avalanche
+%h5.summary-title
+  = t('activerecord.attributes.avalanche_infomation.snowpack')
+%p.summary-content
+  = @avalanche_infomation.snowpack
+%h5.summary-title
+  = t('activerecord.attributes.avalanche_infomation.weather')
+%p.summary-content
+  = @avalanche_infomation.weather
 
-.panel.panel-info
-  .panel-heading
-    %h3.panel-title
-      行動への助言 Travel Advisory
-  .panel-body
-    %table.table.table-bordered.table-striped
-      %tr
-        %td
-          = @avalanche_infomation.travel_advisory
+%h4.avalanche-info-subtitle
+  行動への助言 Travel Advisory
+%p.summary-content
+  = @avalanche_infomation.travel_advisory
+
 - if policy(@avalanche_infomation).update?
   = link_to 'Edit', edit_members_avalanche_infomation_path(@avalanche_infomation)
   \|

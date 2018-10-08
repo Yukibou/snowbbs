@@ -1,42 +1,37 @@
 - avalanche_infomation.avalanche_problems.each do |problem|
-  .panel.panel-info
-    .panel-heading
-      %h3.panel-title
-        留意すべき雪崩 Avalnche Problem
-    .panel-body
-      .avalanche-type
-        = problem.avalanche_type_text
-      .row
-        .col-xs-6.avalanche-aspect
-          %p 斜面方位 Slope aspect
-          .avalanche-aspect-base
-            = image_tag 'info2_bg1.png'
-            .avalanche-aspect-base-zone
-              = image_tag 'info2_bg2.png'
-            - problem.zone_details.each do |detail|
-              - zone = zone_prefix(detail.zone)
-              - ZoneDetail::ASPECTS.each do |aspect|
-                - if detail.send("aspect_#{aspect}")
-                  .avalanche-aspect-parts
-                    - if detail.send("aspect_#{aspect}_power") == "#{aspect}_strong"
-                      = image_tag "info2_#{zone}_#{aspect}_a.png"
-                    - else
-                      = image_tag "info2_#{zone}_#{aspect}_b.png"
+  %h4.avalanche-info-subtitle
+    留意すべき雪崩 Avalnche Problem
 
-        .col-xs-3.avalanche-trigger
-          %p 誘発の可能性
-          - AvalancheProblem::TRIGGERING.each do |trigger|
-            - if problem.triggering == trigger
-              = image_tag "info3_graph_#{trigger}_on.png"
-            - else
-              = image_tag "info3_graph_#{trigger}_off.png"
-        .col-xs-3.avalanche-size
-          %p サイズ
-          = render 'shared/avalanche_infomations/avalanche_problem_size', problem: problem
+  %h5.summary-title
+    = problem.avalanche_type_text
+  .row
+    .col-xs-6.avalanche-aspect
+      .avalanche-aspect-base
+        = image_tag 'info2_bg1.png'
+        .avalanche-aspect-base-zone
+          = image_tag 'info2_bg2.png'
+        - problem.zone_details.each do |detail|
+          - zone = zone_prefix(detail.zone)
+          - ZoneDetail::ASPECTS.each do |aspect|
+            - if detail.send("aspect_#{aspect}")
+              .avalanche-aspect-parts
+                - if detail.send("aspect_#{aspect}_power") == "#{aspect}_strong"
+                  = image_tag "info2_#{zone}_#{aspect}_a.png"
+                - else
+                  = image_tag "info2_#{zone}_#{aspect}_b.png"
 
-      .avalanche-comments
-        %p
-          = problem.comments
+    .col-xs-3.avalanche-trigger
+      - AvalancheProblem::TRIGGERING.each do |trigger|
+        - if problem.triggering == trigger
+          = image_tag "info3_graph_#{trigger}_on.png"
+        - else
+          = image_tag "info3_graph_#{trigger}_off.png"
+    .col-xs-3.avalanche-size
+      = render 'shared/avalanche_infomations/avalanche_problem_size', problem: problem
+
+  .avalanche-comments
+    .well.well-sm
+      = problem.comments
 
       -# TODO 不要なカラムを消すこと
       -#%table.table.table-bordered.table-striped
