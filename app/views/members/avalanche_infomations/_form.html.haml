@@ -3,7 +3,7 @@
 
   .form-inputs
     = f.input :announced_at, wrapper: :horizontal_select_date, as: :datetime
-    = f.input :area_name, include_blank: false
+    = f.association :area, collection: Area.sort_order
   .panel.panel-info
     .panel-heading
       %h3.panel-title

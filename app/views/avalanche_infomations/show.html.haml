@@ -1,2 +1,9 @@
-= link_to 'Back >', :back
-= render 'shared/avalanche_infomations/show_avaranche_info'
+.row
+  .col-sm-3.hidden-xs
+    %ul
+      - Area.public_area.sort_order.each do |area|
+        %li
+          = link_to "#{area.name}(#{policy_scope(area.avalanche_infomations).size})", observations_path(q: {area_id_eq: area.id})
+  .col-sm-9
+    -#%p= link_to_function 'Back >', 'history.back()'
+    = render 'shared/avalanche_infomations/show_avaranche_info'

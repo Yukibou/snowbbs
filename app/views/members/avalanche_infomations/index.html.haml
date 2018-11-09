@@ -4,7 +4,7 @@
   %thead
     %tr
       %th= t('activerecord.attributes.avalanche_infomation.announced_at')
-      %th= t('activerecord.attributes.avalanche_infomation.area_name')
+      %th= t('activerecord.attributes.avalanche_infomation.area.name')
       %th= t('activerecord.attributes.avalanche_infomation.user')
       %th
       %th
@@ -13,7 +13,7 @@
     - @avalanche_infomations.each do |avalanche_infomation|
       %tr
         %td= link_to avalanche_infomation.announced_at.strftime("%y%m%d %H:%M"), [:members, avalanche_infomation]
-        %td= avalanche_infomation.area_name
+        %td= avalanche_infomation.area.name
         %td= avalanche_infomation.user.name
         %td= link_to_if(policy(avalanche_infomation).update?, t('link.Edit'), edit_members_avalanche_infomation_path(avalanche_infomation), class: 'btn btn-xs btn-info'){}
         %td= link_to_if(policy(avalanche_infomation).destroy?, t('link.Destroy'), [:members, avalanche_infomation], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger'){}

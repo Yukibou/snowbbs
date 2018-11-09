@@ -7,6 +7,10 @@ class AvalancheInfomationPolicy < ApplicationPolicy
     true
   end
 
+  def latest_by_area?
+    true
+  end
+
   def create?
     if user.present?
       user.admin?
