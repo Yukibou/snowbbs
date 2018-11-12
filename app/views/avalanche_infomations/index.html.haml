@@ -2,11 +2,10 @@
   %thead
     %tr
       %th= t('activerecord.attributes.avalanche_infomation.announced_at')
-      %th= t('activerecord.attributes.avalanche_infomation.area.name')
-      %th= t('activerecord.attributes.avalanche_infomation.user')
+      %th= '観測エリア Range'
   %tbody
     - @avalanche_infomations.each do |avalanche_infomation|
       %tr
-        %td= link_to avalanche_infomation.announced_at.strftime("%y%m%d %H:%M"), avalanche_infomation
+        - announced_date = avalanche_infomation.announced_at.strftime("%Y年%m月%d日%H時")
+        %td= link_to "#{announced_date} 発表", avalanche_infomation
         %td= avalanche_infomation.area.name
-        %td= avalanche_infomation.user.name

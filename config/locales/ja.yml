@@ -124,7 +124,7 @@ ja:
         role: 権限
         observation_count: 観察数
       area:
-        name: エリア名
+        name: 観測エリア名
         public: 公開
     errors:
       messages:
