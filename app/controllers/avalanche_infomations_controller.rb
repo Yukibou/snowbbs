@@ -4,6 +4,8 @@ class AvalancheInfomationsController < ApplicationController
   before_action :set_area, only: [:latest_by_area]
   after_action :verify_authorized
 
+  layout 'application_avalanche_info'
+
   def index
     @avalanche_infomations = policy_scope(AvalancheInfomation).sort_order
   end

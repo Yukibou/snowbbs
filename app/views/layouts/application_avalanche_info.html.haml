@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-    %title= content_for?(:title) ? yield(:title) : '雪の掲示板'
+    %title= content_for?(:title) ? yield(:title) : '雪崩情報'
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Snowbbs'}"}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
     -#= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
@@ -12,12 +12,12 @@
     -#  = render 'layouts/navigation'
     .panel.panel-default.hidden-xs
       .panel-body.for-iframe-0-padding
-        %h4.for-iframe-title-observation
-          = link_to observations_path, targt: '_top' do
+        %h4.for-iframe-title-avalanche-info
+          = link_to avalanche_infomations_path, targt: '_top' do
             .for-iframe-title
-              %small.font-white snow bulletin board
+              %small.font-white avalanche info
               %br
-              雪の掲示板
+              雪崩情報
     %main.for-iframe{:role => "main"}
       = render 'layouts/messages'
       = yield
