@@ -1,4 +1,4 @@
-%h4
+.avalanche-info-title-sp
   - announced_date = @avalanche_infomation.announced_at.strftime("%Y年%m月%d日%H時")
   = "#{announced_date} 発表の#{@avalanche_infomation.area.name}エリアの雪崩情報"
 %h5.avalanche-info-subtitle
@@ -40,7 +40,7 @@
 
 %h5.avalanche-info-subtitle
   行動への助言 Travel Advisory
-%p.summary-content
+%p
   = @avalanche_infomation.travel_advisory
 
 = link_to '詳しい情報はこちら / More detailed information is here.', @avalanche_infomation
