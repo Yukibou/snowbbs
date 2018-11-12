@@ -1,0 +1,47 @@
+%h4
+  - announced_date = @avalanche_infomation.announced_at.strftime("%Y年%m月%d日%H時")
+  = "#{announced_date} 発表の#{@avalanche_infomation.area.name}エリアの雪崩情報"
+%h5.avalanche-info-subtitle
+  雪崩危険度と傾向 Danger Rating
+.pull-left
+  .avalanche-zone-base
+    = image_tag "info1_bg_alp.png"
+    .avalanche-zone-parts-sp
+      = image_tag "info1_dl_#{@avalanche_infomation.alpine_zone.to_s}.png"
+    .avalanche-zone-parts-sp
+      = image_tag "info1_arrow_w_#{@avalanche_infomation.alpine_trend.to_s}.png"
+
+  .avalanche-zone-base
+    = image_tag "info1_bg_tl.png"
+    .avalanche-zone-parts-sp
+      = image_tag "info1_dl_#{@avalanche_infomation.treeline_zone.to_s}.png"
+    .avalanche-zone-parts-sp
+      = image_tag "info1_arrow_w_#{@avalanche_infomation.treeline_trend.to_s}.png"
+
+  .avalanche-zone-base
+    = image_tag "info1_bg_btl.png"
+    .avalanche-zone-parts-sp
+      = image_tag "info1_dl_#{@avalanche_infomation.below_treeline_zone.to_s}.png"
+    .avalanche-zone-parts-sp
+      = image_tag "info1_arrow_w_#{@avalanche_infomation.below_treeline_trend.to_s}.png"
+
+%h5
+  = "アルパイン Alpine : #{@avalanche_infomation.alpine_confidence_text}"
+%P
+  = @avalanche_infomation.alpine_comments
+%h5
+  = "森林限界 Treeline : #{@avalanche_infomation.treeline_confidence_text}"
+%P
+  = @avalanche_infomation.treeline_comments
+%h5
+  = "森林帯 Below Treeline : #{@avalanche_infomation.below_treeline_confidence_text}"
+%P
+  = @avalanche_infomation.below_treeline_comments
+
+%h5.avalanche-info-subtitle
+  行動への助言 Travel Advisory
+%p.summary-content
+  = @avalanche_infomation.travel_advisory
+
+= link_to '詳しい情報はこちら / More detailed information is here.', @avalanche_infomation
+

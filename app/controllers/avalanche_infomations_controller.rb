@@ -14,7 +14,6 @@ class AvalancheInfomationsController < ApplicationController
   def latest_by_area
     @avalanche_infomation = @area.avalanche_infomations.last
     authorize @avalanche_infomation
-    render 'show'
   end
 
   private
