@@ -25,35 +25,36 @@
     .avalanche-zone-parts
       = image_tag "info1_arrow_w_#{@avalanche_infomation.below_treeline_trend.to_s}.png"
 
-%table.table.table-bordered.table-condensed
-  %tr
-    %th
-      標高帯
-    %th
-      信頼度
-    %th
-      コメント
-  %tr
-    %td
-      アルパイン Alpine
-    %td
-      = @avalanche_infomation.alpine_confidence_text
-    %td
-      = @avalanche_infomation.alpine_comments
-  %tr
-    %td
-      森林限界 Treeline
-    %td
-      = @avalanche_infomation.treeline_confidence_text
-    %td
-      = @avalanche_infomation.treeline_comments
-  %tr
-    %td
-      森林帯 Below Treeline
-    %td
-      = @avalanche_infomation.below_treeline_confidence_text
-    %td
-      = @avalanche_infomation.below_treeline_comments
+.avalanche-zone-comment
+  %table.table.table-bordered.table-condensed
+    %tr
+      %th
+        標高帯
+      %th
+        信頼度
+      %th
+        コメント
+    %tr
+      %td
+        アルパイン Alpine
+      %td
+        = @avalanche_infomation.alpine_confidence_text
+      %td
+        = @avalanche_infomation.alpine_comments
+    %tr
+      %td
+        森林限界 Treeline
+      %td
+        = @avalanche_infomation.treeline_confidence_text
+      %td
+        = @avalanche_infomation.treeline_comments
+    %tr
+      %td
+        森林帯 Below Treeline
+      %td
+        = @avalanche_infomation.below_treeline_confidence_text
+      %td
+        = @avalanche_infomation.below_treeline_comments
 
 = render 'shared/avalanche_infomations/avalanche_problem', avalanche_infomation: @avalanche_infomation
 
