@@ -2,24 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.avalanche-aspect-row
+  display: table
+.avalanche-trigger
+  display: table-cell
+.avalanche-size
+  display: table-cell
+
+// 方角と規模
 .avalanche-aspect-base
+  display: table-cell
   img
     margin-left: 0
   position: relative
 .avalanche-aspect-base-zone
-  position: absolute
-  top: 0px
-  left: 220px
+  display: table-cell
 .avalanche-aspect-parts
   position: absolute
   top: 0px
   left: 0px
+
+//  標高帯ごとの表示
 .avalanche-zone-base
   position: relative
 .avalanche-zone-parts
   position: absolute
   top: 0px
   left: 292px
+
 .form-group-inline
   display: inline-block
   margin-right: 10px
