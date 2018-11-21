@@ -161,3 +161,19 @@ section {
     left: 120px;
   }
 }
+
+// 雪崩情報の単独画面をスマホとそれ以外でレイアウト調整している
+@media only screen and(min-width: 481px) {
+  .avalanche-zone-parts {
+    position: absolute;
+    top: 0px;
+    left: 292px;
+  }
+}
+@media only screen and(max-width: 480px) {
+  .avalanche-zone-parts {
+    position: absolute;
+    top: 0px;
+    left: 180px;
+  }
+}
