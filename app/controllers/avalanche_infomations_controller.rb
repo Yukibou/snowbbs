@@ -2,7 +2,7 @@ class AvalancheInfomationsController < ApplicationController
   before_action :set_avalanche_infomation, only: [:show]
   before_action :authorize_avalanche_infomation, only: [:index]
   before_action :set_area, only: [:latest_by_area]
-  after_action :verify_authorized
+  after_action :verify_authorized, except: [:latest_by_area]
 
   layout 'application_avalanche_info'
 
@@ -15,7 +15,11 @@ class AvalancheInfomationsController < ApplicationController
 
   def latest_by_area
     @avalanche_infomation = @area.avalanche_infomations.last
-    authorize @avalanche_infomation
+    if @avalanche_infomation.present?
+      authorize @avalanche_infomation
+    else
+      render 'prepare_now'
+    end
   end
 
   private
