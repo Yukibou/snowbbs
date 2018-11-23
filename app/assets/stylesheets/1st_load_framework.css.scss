@@ -147,6 +147,19 @@ section {
   }
 }
 
+// 上記同様、TOPからの雪崩情報のスマホ対応サイズ調整
+@media only screen and(max-width: 480px) {
+  .avalanche-top-index {
+    font-size: 1.5em;
+  }
+}
+@media only screen and(max-width: 320px) {
+  body{font-size: 1.0em;}
+  .avalanche-top-index {
+    font-size: 14px;
+  }
+}
+
 @media only screen and(min-width: 271px) {
   .avalanche-zone-parts-sp {
     position: absolute;
