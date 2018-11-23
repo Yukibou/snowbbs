@@ -153,12 +153,12 @@ section {
     font-size: 2.0em;
   }
 }
-//@media only screen and(max-width: 320px) {
-//  body{font-size: 1.0em;}
-//  .avalanche-top-index {
-//    font-size: 14px;
-//  }
-//}
+@media only screen and(max-width: 320px) {
+  body{font-size: 1.0em;}
+  .avalanche-top-index {
+    font-size: 14px;
+  }
+}
 
 @media only screen and(min-width: 271px) {
   .avalanche-zone-parts-sp {
