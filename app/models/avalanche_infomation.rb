@@ -13,11 +13,8 @@ class AvalancheInfomation < ApplicationRecord
   enumerize :below_treeline_zone, in: [:extreme, :high, :considerable, :moderate, :low, :no_rating]
   validates :below_treeline_zone, presence: true
   enumerize :alpine_confidence, in: [:good, :fair, :low]
-  validates :alpine_confidence, presence: true
   enumerize :treeline_confidence, in: [:good, :fair, :low]
-  validates :treeline_confidence, presence: true
   enumerize :below_treeline_confidence, in: [:good, :fair, :low]
-  validates :below_treeline_confidence, presence: true
   enumerize :alpine_trend, in: [:up, :stay, :down]
   validates :alpine_trend, presence: true
   enumerize :treeline_trend, in: [:up, :stay, :down]
