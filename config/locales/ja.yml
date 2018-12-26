@@ -39,7 +39,7 @@ ja:
         comments: コメント Comments
       avalanche_infomation:
         announced_at: 発表日時 Announced At
-        area: エリア Range
+        avalanche_area: 告知エリア Range
         alpine_zone: アルパイン危険度 Alpine Rating
         alpine_trend: アルパイン傾向 Alpine Trend
         alpine_comments: アルパイン コメント Alpine Comments
