@@ -2,6 +2,7 @@ class AvalancheInfomation < ApplicationRecord
   extend Enumerize
   belongs_to :user
   belongs_to :area
+  belongs_to :avalanche_area
   has_many :observations
   has_many :avalanche_problems, dependent: :delete_all, inverse_of: :avalanche_infomation
   accepts_nested_attributes_for :avalanche_problems

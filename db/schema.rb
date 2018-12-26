@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181226022357) do
+ActiveRecord::Schema.define(version: 20181226022605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,9 @@ ActiveRecord::Schema.define(version: 20181226022357) do
     t.datetime "updated_at",                null: false
     t.integer  "user_id"
     t.integer  "area_id"
+    t.integer  "avalanche_area_id"
     t.index ["area_id"], name: "index_avalanche_infomations_on_area_id", using: :btree
+    t.index ["avalanche_area_id"], name: "index_avalanche_infomations_on_avalanche_area_id", using: :btree
     t.index ["user_id"], name: "index_avalanche_infomations_on_user_id", using: :btree
   end
 
