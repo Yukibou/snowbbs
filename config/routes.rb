@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     end
     resources :users
     resources :areas
+    resources :avalanche_areas
   end
 end

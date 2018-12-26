@@ -3,5 +3,6 @@
   %li= link_to '観察データ', members_observations_path
   %li= link_to '雪崩情報', members_avalanche_infomations_path
   - if user_signed_in? && current_user.admin?
-    %li= link_to 'Users', members_users_path
-    %li= link_to 'Areas', members_areas_path
+    %li= link_to '会員管理', members_users_path
+    %li= link_to '雪の掲示板エリア', members_areas_path
+    %li= link_to '雪崩情報エリア', members_avalanche_areas_path

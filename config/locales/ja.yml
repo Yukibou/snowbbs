@@ -18,6 +18,7 @@ ja:
       avalanche_infomation: 雪崩情報
       avalanche_problem: 留意すべき雪崩
       zone_detail:
+      avalanche_area: 雪崩情報エリア
     attributes:
       zone_detail:
         zone: 標高帯
@@ -126,6 +127,8 @@ ja:
       area:
         name: 観測エリア名
         public: 公開
+      avalanche_area:
+        name: 告知エリア名
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"

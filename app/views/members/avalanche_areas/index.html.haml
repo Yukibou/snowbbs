@@ -1,0 +1,21 @@
+%h1 Listing members_avalanche_areas
+
+%table.table
+  %thead
+    %tr
+      %th= t('activerecord.attributes.avalanche_area.name')
+      -#%th
+      %th
+      %th
+
+  %tbody
+    - @avalanche_areas.each do |avalanche_area|
+      %tr
+        %td= avalanche_area.name
+        -#%td= link_to 'Show', avalanche_area
+        %td= link_to 'Edit', edit_members_avalanche_area_path(avalanche_area)
+        %td= link_to 'Destroy', [:members, avalanche_area], method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Avalanche area', new_members_avalanche_area_path
