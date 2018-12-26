@@ -8,4 +8,4 @@
       %tr
         - announced_date = avalanche_infomation.announced_at.strftime("%Y年%m月%d日%H時")
         %td= link_to "#{announced_date} 発表", avalanche_infomation
-        %td= avalanche_infomation.area.name
+        %td= avalanche_infomation.avalanche_area.name

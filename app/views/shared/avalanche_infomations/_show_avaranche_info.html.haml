@@ -1,6 +1,6 @@
 %h3.avalanche-info-title
   - announced_date = @avalanche_infomation.announced_at.strftime("%y%m%d %H:%M")
-  = "雪崩情報 #{announced_date} #{@avalanche_infomation.area.name}"
+  = "雪崩情報 #{announced_date} #{@avalanche_infomation.avalanche_area.name}"
 %h4.avalanche-info-subtitle
   雪崩危険度と傾向 Danger Rating
 .pull-left

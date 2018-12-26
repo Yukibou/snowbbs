@@ -33,6 +33,6 @@ class AvalancheInfomationsController < ApplicationController
   end
 
   def set_area
-    @area = Area.find params[:area_id]
+    @area = AvalancheArea.find params[:area_id]
   end
 end

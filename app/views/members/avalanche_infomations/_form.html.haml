@@ -3,7 +3,7 @@
 
   .form-inputs
     = f.input :announced_at, wrapper: :horizontal_select_date, as: :datetime
-    = f.association :area, collection: Area.sort_order
+    = f.association :avalanche_area, collection: AvalancheArea.all
   .panel.panel-info
     .panel-heading
       %h3.panel-title
@@ -53,6 +53,6 @@
         = f.input :weather, as: :text
         = f.input :travel_advisory, as: :text
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: 'btn btn-primary'
 
 
