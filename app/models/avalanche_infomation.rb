@@ -28,6 +28,6 @@ class AvalancheInfomation < ApplicationRecord
 
   def title_name
     announced_date = announced_at.strftime("%y%m%d")
-    "#{announced_date} #{self.area.name}"
+    "#{announced_date} #{self.avalanche_area.name}"
   end
 end
