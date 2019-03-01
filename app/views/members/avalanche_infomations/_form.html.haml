@@ -39,7 +39,7 @@
     = f.simple_fields_for :avalanche_problems do |ap|
       = render 'avalanche_problem_fields', f: ap
     .links
-      = link_to_add_association '留意すべき雪崩の追加', f, :avalanche_problems, class: 'btn btn-info', wrap_object: Proc.new {|avalanche_problem| AvalancheProblemDecorator.new(avalanche_problem) }
+      = link_to_add_association '留意すべき雪崩の追加', f, :avalanche_problems, class: 'btn btn-info', wrap_object: Proc.new {|avalanche_problem| AvalancheProblemDecorator.duplicate(avalanche_problem) }
 
   .margin-top-10
   .panel.panel-info

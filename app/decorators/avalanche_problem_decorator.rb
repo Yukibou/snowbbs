@@ -18,4 +18,12 @@ class AvalancheProblemDecorator
       super
     end
   end
+
+  def self.duplicate(avalanche_problem)
+    @avalanche_problem = avalanche_problem
+    @avalanche_problem.zone_details.build(zone: :alpine)
+    @avalanche_problem.zone_details.build(zone: :treeline)
+    @avalanche_problem.zone_details.build(zone: :below_treeline)
+    @avalanche_problem
+  end
 end
